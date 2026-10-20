@@ -1,0 +1,27 @@
+Period,Unit,HoursAvailable,HoursOperated,DowntimeHours,Output,DowntimeReason,DefectCount,OperatingCost
+2025-11,Line-1,200,178,22,1780,Brief changeover between product runs,18,9000
+2025-12,Line-1,200,179,21,1790,Short changeover for product switch,18,9020
+2026-01,Line-1,200,180,20,1800,Routine changeover downtime,18,9040
+2026-02,Line-1,200,181,19,1810,Scheduled changeover,18,9060
+2026-03,Line-1,200,182,18,1820,Minor changeover delay,18,9080
+2026-04,Line-1,200,181,19,1810,Changeover between batches,18,9060
+2025-11,Line-2,200,150,50,1350,Material shortage delayed production,54,8000
+2025-12,Line-2,200,148,52,1332,Ran short on raw materials,53,8015
+2026-01,Line-2,200,151,49,1359,Waiting on material delivery,54,8030
+2026-02,Line-2,200,149,51,1341,Material shortage on the line,54,8045
+2026-03,Line-2,200,152,48,1368,Scheduled maintenance performed,55,8060
+2026-04,Line-2,200,150,50,1350,Planned maintenance downtime,54,8000
+2025-11,Line-3,200,95,105,665,Machine broke down unexpectedly,53,7000
+2025-12,Line-3,200,92,108,644,Mechanical failure caused a full stoppage,58,7010
+2026-01,Line-3,200,90,110,630,Equipment malfunction halted the line,63,7020
+2026-02,Line-3,200,88,112,616,Motor failure led to extended downtime,68,7030
+2026-03,Line-3,200,85,115,595,Mechanical breakdown on the main conveyor,71,7040
+2026-04,Line-3,200,82,118,574,Machine failure required emergency repair,75,7050
+2026-03,Line-4,200,80,120,560,Mechanical failure on secondary unit,56,7200
+2026-04,Line-4,200,78,122,546,Power outage stopped the line,55,7200
+2025-11,Line-5,200,160,40,1520,Scheduled maintenance downtime,30,8200
+2025-12,Line-5,200,159,41,1510,Routine maintenance performed,30,8212
+2026-01,Line-5,200,161,39,1530,Material shortage on the line,31,8224
+2026-02,Line-5,200,158,42,1501,Changeover between product runs,30,8236
+2026-03,Line-5,200,162,38,1539,Planned maintenance stop,31,8248
+2026-04,Line-5,200,160,40,1520,Brief changeover delay,30,8200

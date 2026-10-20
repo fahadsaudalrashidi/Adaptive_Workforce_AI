@@ -1,0 +1,51 @@
+EntryDate,Account,AccountType,Debit,Credit,Description,Party,InvoiceNumber,DueDate,PaidStatus
+2026-03-01,Cash,Asset,50000,,Owner capital contribution,,,,
+2026-03-01,Share Capital,Equity,,50000,Owner capital contribution,,,,
+2026-03-02,Office Equipment,Asset,8000,,Purchase office equipment,,,,
+2026-03-02,Cash,Asset,,8000,Purchase office equipment,,,,
+2026-03-03,Cash,Asset,20000,,Bank loan proceeds,,,,
+2026-03-03,Loan Payable,Liability,,20000,Bank loan proceeds,,,,
+2026-03-05,Accounts Receivable,Asset,6000,,Sale on credit,Customer A,INV-1001,2026-04-04,Outstanding
+2026-03-05,Sales Revenue,Revenue,,6000,Sale on credit,,,,
+2026-03-07,Accounts Receivable,Asset,3500,,Sale on credit,Customer B,INV-1002,2026-04-06,Outstanding
+2026-03-07,Sales Revenue,Revenue,,3500,Sale on credit,,,,
+2026-03-10,Cash,Asset,4200,,Cash sale,,,,
+2026-03-10,Sales Revenue,Revenue,,4200,Cash sale,,,,
+2026-03-10,Rent Expense,Expense,2000,,March office rent,,,,
+2026-03-10,Cash,Asset,,2000,March office rent,,,,
+2026-03-12,Salaries Expense,Expense,9000,,March salaries,,,,
+2026-03-12,Cash,Asset,,9000,March salaries,,,,
+2025-12-21,Accounts Receivable,Asset,2200,,Sale on credit,Customer F,INV-0920,2026-01-20,Outstanding
+2025-12-21,Sales Revenue,Revenue,,2200,Sale on credit,,,,
+2025-11-01,Consulting Expense,Expense,1800,,Consulting services,,,,
+2025-11-01,Accounts Payable,Liability,,1800,Consulting services,Vendor Z,BILL-771,2025-12-01,Outstanding
+2026-02-08,Office Supplies Expense,Expense,950,,Office supplies,,,,
+2026-02-08,Accounts Payable,Liability,,950,Office supplies,Vendor Y,BILL-802,2026-03-10,Outstanding
+2026-03-15,Office Supplies Expense,Expense,1200,,Office supplies,,,,
+2026-03-15,Accounts Payable,Liability,,1200,Office supplies,Vendor X,BILL-810,2026-04-14,Outstanding
+2026-03-28,Accounts Receivable,Asset,900,,Sale on credit,Customer E,INV-1003,2026-05-01,Outstanding
+2026-03-28,Sales Revenue,Revenue,,900,Sale on credit,,,,
+2026-02-01,Accounts Receivable,Asset,2800,,Sale on credit,Customer C,INV-0950,2026-03-03,Paid
+2026-02-01,Sales Revenue,Revenue,,2800,Sale on credit,,,,
+2026-03-25,Cash,Asset,2800,,Collection from Customer C - INV-0950,,,,
+2026-03-25,Accounts Receivable,Asset,,2800,Collection from Customer C - INV-0950,,,,
+2025-11-05,Utilities Expense,Expense,610,,Utilities bill,,,,
+2025-11-05,Cash,Asset,,610,Utilities bill,,,,
+2025-12-05,Utilities Expense,Expense,630,,Utilities bill,,,,
+2025-12-05,Cash,Asset,,630,Utilities bill,,,,
+2026-01-05,Utilities Expense,Expense,600,,Utilities bill,,,,
+2026-01-05,Cash,Asset,,600,Utilities bill,,,,
+2026-02-05,Utilities Expense,Expense,650,,Utilities bill,,,,
+2026-02-05,Cash,Asset,,650,Utilities bill,,,,
+2026-03-05,Utilities Expense,Expense,620,,Utilities bill,,,,
+2026-03-05,Cash,Asset,,620,Utilities bill,,,,
+2026-03-20,Utilities Expense,Expense,6200,,Utilities bill,,,,
+2026-03-20,Cash,Asset,,6200,Utilities bill,,,,
+2026-03-22,Insurance Expense,Expense,1500,,Quarterly insurance premium,,,,
+2026-03-22,Accounts Payable,Liability,,1500,Quarterly insurance premium,,,,
+2026-03-22,Insurance Expense,Expense,1500,,Quarterly insurance premium payment,,,,
+2026-03-22,Accounts Payable,Liability,,1500,Quarterly insurance premium payment,,,,
+2026-03-25,Consulting Expense,Expense,500,,Legal consultation - contract review,,,,
+2026-03-25,Accounts Payable,Liability,,500,Legal consultation - contract review,,,,
+2026-03-25,Consulting Expense,Expense,500,,IT consulting - server migration,,,,
+2026-03-25,Accounts Payable,Liability,,500,IT consulting - server migration,,,,

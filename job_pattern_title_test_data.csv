@@ -1,0 +1,8 @@
+EmployeeID,JobTitle,Department,YearsAtCompany,MonthlyIncome
+E1,Manager,Sales,7.0,10000
+E2,manager,Sales,8.0,12000
+E3,مدير,Sales,9.0,14000
+E4,Sales Executive,Sales,2.0,6000
+E5,Sales Exective,Sales,2.0,6500
+E6,Engineer,Engineering,,9000
+E7,Engineer,Engineering,4.0,9500

@@ -1,0 +1,14 @@
+SKU,ItemName,Category,QuantityOnHand,UnitCost
+BEARING-6205,Industrial Bearing 6205,Hardware,394,12.0
+BOLT-M10,Steel Bolts M10,Hardware,1195,0.75
+BOLT-M8,Steel Bolts M8,Hardware,2290,0.5
+BOX-LARGE,Cardboard Box Large,Consumables,1625,0.9
+CONNECTOR-X12,Obsolete Connector X12,Electrical,185,8.0
+CONVEYOR-10M,Conveyor Belt 10m,Machinery,13,620.0
+FILTER-AIR,Air Filter Cartridge,Machinery,235,5.0
+GLOVES-L,Safety Gloves L,Safety,1300,3.5
+HELMET,Safety Helmet,Safety,150,15.0
+MOTOR-5HP,Electric Motor 5HP,Machinery,15,450.0
+PUMP-HP200,Hydraulic Pump HP200,Machinery,23,850.0
+TAPE-ROLL,Packing Tape Roll,Consumables,150,1.2
+VALVE-ASSY,Spare Valve Assembly,Machinery,115,210.0

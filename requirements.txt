@@ -1,0 +1,68 @@
+# Adaptive Workforce Intelligence Engine — Dependencies
+# Core
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.11.0
+scikit-learn>=1.3.0
+imbalanced-learn>=0.11.0
+
+# ML Models
+xgboost>=1.7.0
+lightgbm>=4.0.0
+catboost>=1.2.0
+
+# AutoML
+optuna>=3.3.0
+
+# NLP / Fuzzy Matching
+rapidfuzz>=3.0.0
+
+# Time-Series
+prophet>=1.1.5
+statsmodels>=0.14.0
+
+# API
+fastapi>=0.103.0
+uvicorn[standard]>=0.23.0
+python-multipart>=0.0.6
+
+# Frontend
+streamlit>=1.28.0
+plotly>=5.17.0
+jinja2>=3.1.5
+
+# File I/O
+openpyxl>=3.1.0
+pyarrow>=13.0.0
+python-docx>=1.2.0
+
+# Signal Processing
+scipy>=1.11.0   # already listed above; explicit for biosignal
+
+# Reporting (optional — needed for v2.2.0 PDF)
+fpdf2>=2.7.0
+
+# Security — Enterprise License Hardening (Phase 30.1)
+passlib[bcrypt]>=1.7.4
+bcrypt==4.0.1  # pinned: passlib 1.7.4's bcrypt backend self-test crashes against bcrypt>=4.1 (removed __about__) and outright fails against bcrypt 5.x's strict 72-byte ValueError enforcement
+python-jose[cryptography]>=3.3.0
+cryptography>=41.0.0
+
+# Testing (Phase 43 — was missing before; fastapi.testclient/starlette.testclient
+# require httpx to construct a TestClient at all. Installing this as part of
+# Phase 43 incidentally fixed 8 pre-existing, unrelated auth smoke tests that
+# were failing purely because TestClient couldn't initialize without it.)
+httpx>=0.27.0
+
+# Sandboxed code execution (Phase 43)
+pywin32>=306  # Windows Job Objects — kernel-enforced memory/CPU/process-count
+              # limits for backend/core/sandbox_executor.py. Windows-only;
+              # this platform targets the user's Windows machine throughout.
+
+# Agentic AI cloud mode (Phase 44) — an explicit, scoped, user-confirmed
+# exception to this platform's offline-first design; see config/settings.py's
+# ANTHROPIC_API_KEY comment.
+anthropic>=1.0.0
+python-dotenv>=1.0.0  # was already an installed transitive dependency but
+                       # never declared or actually invoked anywhere before
+                       # Phase 44 — see config/settings.py's load_dotenv() call.

@@ -1,0 +1,7 @@
+EntryDate,Account,AccountType,Debit,Credit,Description,Party,InvoiceNumber,DueDate,PaidStatus
+2026-04-01,Cash,Asset,10000,,Owner capital contribution,,,,
+2026-04-01,Share Capital,Equity,,10000,Owner capital contribution,,,,
+2026-04-03,Office Equipment,Asset,3000,,Purchase office equipment,,,,
+2026-04-03,Cash,Asset,,2500,Purchase office equipment,,,,
+2026-04-05,Rent Expense,Expense,1200,,April office rent,,,,
+2026-04-05,Cash,Asset,,1200,April office rent,,,,

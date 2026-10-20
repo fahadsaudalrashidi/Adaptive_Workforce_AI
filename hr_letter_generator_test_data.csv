@@ -1,0 +1,11 @@
+EmployeeID,Name,JobTitle,Department,HireDate,MonthlySalary,YearsAtCompany,SeparationType
+HLEMP001,Sara Al-Otaibi,Senior Analyst,Finance,2018-03-01,12000,7,Resignation
+HLEMP002,Mohammed Al-Qahtani,HR Manager,Human Resources,2015-06-15,18000,10,
+HLEMP003,Fatimah Al-Harbi,Software Engineer,IT,2021-01-10,15000,4,
+HLEMP004,Khalid Al-Dosari,Sales Executive,Sales,2019-11-20,From 8000 to 10000 SAR,5,Termination
+HLEMP005,Noura Al-Shammari,Marketing Specialist,Marketing,2022-05-05,9000,2,
+HLEMP006,Abdullah Al-Ghamdi,Operations Supervisor,Operations,2017-08-01,13500,8,Resignation
+HLEMP007,Layla Al-Zahrani,Accountant,Finance,2020-02-14,,3,
+HLEMP008,,Recruiter,Human Resources,2016-09-01,11000,9,
+HLEMP009,Yousef Al-Malki,IT Support,IT,2023-01-01,7000,1,
+HLEMP010,Reem Al-Subaie,Finance Manager,Finance,2014-04-10,20000,12,Resignation

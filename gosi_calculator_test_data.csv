@@ -1,0 +1,8 @@
+EmployeeID,Department,Nationality,MonthlySalary,HousingAllowance,GOSISystem
+GEMP001,Finance,Saudi,10000,2000,Old System
+GEMP002,IT,Saudi,15000,3000,New System
+GEMP003,Sales,Non-Saudi,8000,1500,
+GEMP004,Finance,Saudi,40000,10000,
+GEMP005,HR,Non-Saudi,20000,0,
+GEMP006,IT,Saudi,From 5000 to 8000,1000,New System
+GEMP007,Sales,,12000,2000,New System

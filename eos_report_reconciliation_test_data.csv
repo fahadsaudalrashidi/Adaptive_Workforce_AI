@@ -1,0 +1,6 @@
+EmployeeID,Department,YearsAtCompany,MonthlySalary,SeparationType,LeaveBalance
+EOSEMP001,Operations,5.120547945205479,11081,Resignation,60
+EOSEMP002,Operations,5.0,7000,Resignation,18
+EOSEMP003,Operations,3.863013698630137,10425,Resignation,27.41
+EOSEMP004,Operations,3,9000,Termination (80),0
+EOSEMP005,Operations,8,9000,Termination (80),0

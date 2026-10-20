@@ -1,0 +1,41 @@
+PODate,SupplierName,SKU,ItemName,Category,UnitPrice,Quantity,ExpectedDeliveryDate,ActualDeliveryDate
+2025-11-05,Al-Rajhi Steel Supply,BOLT-M8,Steel Bolts M8,Hardware,0.44,4000,2025-11-12,2025-11-12
+2025-12-10,Al-Rajhi Steel Supply,BOLT-M8,Steel Bolts M8,Hardware,0.45,3800,2025-12-17,2025-12-16
+2026-01-15,Al-Rajhi Steel Supply,BOLT-M8,Steel Bolts M8,Hardware,0.45,4200,2026-01-22,2026-01-23
+2026-02-20,Al-Rajhi Steel Supply,BOLT-M8,Steel Bolts M8,Hardware,0.46,4000,2026-02-27,2026-02-27
+2026-03-25,Al-Rajhi Steel Supply,BOLT-M8,Steel Bolts M8,Hardware,0.45,3900,2026-04-01,2026-04-01
+2025-11-20,Gulf Hardware Trading,BOLT-M8,Steel Bolts M8,Hardware,0.55,1500,2025-11-30,2025-12-02
+2026-01-10,Gulf Hardware Trading,BOLT-M8,Steel Bolts M8,Hardware,0.56,1600,2026-01-20,2026-01-24
+2026-03-05,Gulf Hardware Trading,BOLT-M8,Steel Bolts M8,Hardware,0.54,1500,2026-03-15,2026-03-15
+2025-11-08,Gulf Hardware Trading,HELMET,Safety Helmet,Safety,14.0,100,2025-11-18,2025-11-21
+2025-12-08,Gulf Hardware Trading,HELMET,Safety Helmet,Safety,14.5,95,2025-12-18,2025-12-18
+2026-01-08,Gulf Hardware Trading,HELMET,Safety Helmet,Safety,15.2,110,2026-01-18,2026-01-23
+2026-02-08,Gulf Hardware Trading,HELMET,Safety Helmet,Safety,16.0,90,2026-02-18,2026-02-19
+2026-03-08,Gulf Hardware Trading,HELMET,Safety Helmet,Safety,16.8,105,2026-03-18,2026-03-24
+2025-11-12,National Safety Equipment Co,GLOVES-L,Safety Gloves L,Safety,3.6,800,2025-11-18,2025-11-17
+2025-12-12,National Safety Equipment Co,GLOVES-L,Safety Gloves L,Safety,3.55,850,2025-12-18,2025-12-18
+2026-01-12,National Safety Equipment Co,GLOVES-L,Safety Gloves L,Safety,3.5,820,2026-01-18,2026-01-16
+2026-02-12,National Safety Equipment Co,GLOVES-L,Safety Gloves L,Safety,3.45,900,2026-02-18,2026-02-18
+2026-03-12,National Safety Equipment Co,GLOVES-L,Safety Gloves L,Safety,3.4,870,2026-03-18,2026-03-19
+2025-11-15,Precision Machinery Parts,PUMP-HP200,Hydraulic Pump HP200,Machinery,850.0,5,2025-12-06,2025-12-08
+2026-02-01,Precision Machinery Parts,PUMP-HP200,Hydraulic Pump HP200,Machinery,855.0,4,2026-02-22,2026-02-25
+2025-11-18,Precision Machinery Parts,MOTOR-5HP,Electric Motor 5HP,Machinery,430.0,8,2025-12-09,2025-12-13
+2026-01-20,Precision Machinery Parts,MOTOR-5HP,Electric Motor 5HP,Machinery,435.0,6,2026-02-10,2026-02-18
+2026-03-15,Precision Machinery Parts,MOTOR-5HP,Electric Motor 5HP,Machinery,432.0,7,2026-04-05,2026-04-10
+2025-12-01,Riyadh Industrial Supplies,MOTOR-5HP,Electric Motor 5HP,Machinery,470.0,3,,
+2026-02-15,Riyadh Industrial Supplies,MOTOR-5HP,Electric Motor 5HP,Machinery,475.0,4,,
+2025-11-10,Al-Rajhi Steel Supply,TAPE-ROLL,Packing Tape Roll,Consumables,1.18,600,2025-11-15,2025-11-15
+2025-12-08,Al-Rajhi Steel Supply,TAPE-ROLL,Packing Tape Roll,Consumables,1.2,650,2025-12-13,2025-12-12
+2026-01-05,Al-Rajhi Steel Supply,TAPE-ROLL,Packing Tape Roll,Consumables,1.19,620,2026-01-10,2026-01-10
+2026-02-02,Al-Rajhi Steel Supply,TAPE-ROLL,Packing Tape Roll,Consumables,1.21,640,2026-02-07,2026-02-09
+2026-03-01,Al-Rajhi Steel Supply,TAPE-ROLL,Packing Tape Roll,Consumables,1.2,630,2026-03-06,2026-03-06
+2026-03-28,Al-Rajhi Steel Supply,TAPE-ROLL,Packing Tape Roll,Consumables,1.2,610,2026-04-02,2026-04-01
+2025-11-22,Al-Rajhi Steel Supply,BOX-LARGE,Cardboard Box Large,Consumables,0.89,380,2025-11-27,2025-11-27
+2025-12-20,Al-Rajhi Steel Supply,BOX-LARGE,Cardboard Box Large,Consumables,0.9,400,2025-12-25,2025-12-26
+2026-01-18,Al-Rajhi Steel Supply,BOX-LARGE,Cardboard Box Large,Consumables,0.9,390,2026-01-23,2026-01-23
+2026-02-15,Al-Rajhi Steel Supply,BOX-LARGE,Cardboard Box Large,Consumables,0.91,410,2026-02-20,2026-02-20
+2026-03-15,Al-Rajhi Steel Supply,BOX-LARGE,Cardboard Box Large,Consumables,0.9,395,2026-03-20,2026-03-19
+2025-11-25,National Safety Equipment Co,BEARING-6205,Industrial Bearing 6205,Hardware,12.0,40,2025-12-04,2025-12-09
+2025-12-28,National Safety Equipment Co,BEARING-6205,Industrial Bearing 6205,Hardware,12.1,45,2026-01-06,2026-01-12
+2026-01-30,National Safety Equipment Co,BEARING-6205,Industrial Bearing 6205,Hardware,12.0,42,2026-02-08,2026-02-12
+2026-03-01,National Safety Equipment Co,BEARING-6205,Industrial Bearing 6205,Hardware,12.2,38,2026-03-10,2026-03-17

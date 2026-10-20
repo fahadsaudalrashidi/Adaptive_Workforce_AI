@@ -1,0 +1,223 @@
+AWI
+
+Enterprise Intelligence Platform
+
+OVERVIEW
+
+Enterprise Overview
+
+Every module, one click away
+
+AI & BUSINESS INTELLIGENCE
+
+AI Business Analyst
+
+Ask questions · Local & offline
+
+Financial Intelligence
+
+Revenue · Expense · P&L · Cash Flow
+
+Accounting Intelligence
+
+General Ledger · Trial Balance · AR/AP Aging
+
+Inventory Intelligence
+
+Stock Levels · Turnover · ABC · Reorder Point
+
+Procurement Intelligence
+
+Supplier Spend · Price Trends · Cost Reduction
+
+Logistics Intelligence
+
+Delivery Performance · Carrier Scoring · Returns
+
+Operations Intelligence
+
+Productivity · Utilization · Bottlenecks
+
+ADVANCED
+
+HR ANALYTICS
+
+Overtime Cost Intelligence
+
+Overtime spend vs. risk
+
+Payroll Movements
+
+Salary movement vs. risk
+
+Payroll Budget Planner
+
+Planned vs. actual headcount & cost
+
+Exit Interview Intelligence
+
+Free-text theme analysis
+
+Recruitment Pipeline
+
+Hiring funnel · Time to hire
+
+Job Pattern Grouping
+
+Market research worksheet export
+
+Fairness / Bias Audit
+
+Protected attributes · Disparity
+
+Pay Equity
+
+Comparable-role pay gaps
+
+Nitaqat / Saudization
+
+Illustrative Saudization estimate
+
+Succession Readiness
+
+Constructed-heuristic readiness score
+
+Contract Expiry & Renewal
+
+Contract & Iqama expiry tiers
+
+SAUDI COMPLIANCE & CALCULATORS
+
+Saudi Labor Law Calculators
+
+Gratuity · WPS check · Leave
+
+GOSI Contribution Calculator
+
+Old/New system · Non-Saudi hazards
+
+HR Letter Generator
+
+Salary · employment · end-of-service letters
+
+Zakat Base Estimator
+
+Manual balance-sheet entry · Simplified estimate
+
+ADVANCED
+
+AI Integrity
+
+Safety · Audit status
+
+LOCAL & OFFLINE
+
+Each module uploads its own data
+
+AWI Enterprise Intelligence
+/
+Executive Intelligence
+Governance Active
+•
+PDPL Compliant
+عربي
+AWI Platform
+AWI Enterprise Intelligence Platform
+
+Every module below is independent — upload your own file directly inside the module you need. There is no shared platform-wide dataset; each analysis runs on the data you give that specific module.
+
+AI & BUSINESS INTELLIGENCE
+
+AI Business Analyst
+
+Ask questions over your data — local & offline
+
+Financial Intelligence
+
+Revenue, expense, P&L, cash flow
+
+Accounting Intelligence
+
+General ledger, trial balance, AR/AP aging
+
+Inventory Intelligence
+
+Stock levels, turnover, ABC, reorder point
+
+Procurement Intelligence
+
+Supplier spend, price trends, cost reduction
+
+Logistics Intelligence
+
+Delivery performance, carrier scoring, returns
+
+Operations Intelligence
+
+Productivity, utilization, bottlenecks
+
+HR ANALYTICS
+
+Overtime Cost Intelligence
+
+Overtime spend by department
+
+Payroll Movements
+
+Salary movement tracking
+
+Payroll Budget Planner
+
+Planned vs. actual headcount & cost
+
+Exit Interview Intelligence
+
+Free-text theme analysis
+
+Recruitment Pipeline
+
+Hiring funnel, time to hire
+
+Job Pattern Grouping
+
+Market research worksheet export
+
+Fairness / Bias Audit
+
+Protected attributes, disparity
+
+Pay Equity
+
+Comparable-role pay gaps
+
+Nitaqat / Saudization
+
+Illustrative Saudization estimate
+
+Succession Readiness
+
+Constructed-heuristic readiness score
+
+Contract Expiry & Renewal
+
+Contract & Iqama expiry tiers
+
+SAUDI COMPLIANCE & CALCULATORS
+
+Saudi Labor Law Calculators
+
+Gratuity, WPS check, leave
+
+GOSI Contribution Calculator
+
+Old/New system, non-Saudi rates
+
+HR Letter Generator
+
+Salary, employment, end-of-service letters
+
+Zakat Base Estimator
+
+Manual balance-sheet entry, simplified estimate
+
+All risk indicators are probabilistic. HR professional review required before any decision.

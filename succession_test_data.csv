@@ -1,0 +1,62 @@
+﻿EmployeeID,Department,JobLevel,PerformanceRating,YearsAtCompany,PromotionFairness,Nationality
+EMP001,Finance,1,2.0,3.2,3.0,KSA
+EMP002,Operations,1,3.0,2.0,3.0,India
+EMP003,finance,1,2.0,3.5,4.0,سعودي
+EMP004,Engineering,1,2.0,2.9,5.0,غير سعودي
+EMP005,finance,1,3.0,0.8,5.0,KSA
+EMP006,مبيعات,1,,3.9,3.0,Philippines
+EMP007,Operations ,1,1.0,,3.0,سعودي
+EMP008,Operations,1,3.0,3.3,,Egypt
+EMP009,مبيعات,1,2.0,0.9,3.0,saudi
+EMP010,Operations ,1,2.0,2.1,4.0,Philippines
+EMP011,مبيعات,1,2.0,1.8,4.0,سعودي
+EMP012,Operations ,1,2.0,3.7,4.0,India
+EMP013,Operations ,2,4.0,7.3,3.0,Saudi
+EMP014,finance,2,4.0,8.4,5.0,غير سعودي
+EMP015,Operations ,2,4.0,7.9,4.0,سعودي
+EMP016,مبيعات,2,4.0,7.8,5.0,Philippines
+EMP017,Sales,2,4.0,7.6,5.0,سعودي
+EMP018,Sales,2,1.0,0.7,3.0,Non-Saudi
+EMP019,finance,2,2.0,3.4,3.0,Saudi
+EMP020,Operations,2,2.0,2.7,5.0,India
+EMP021,Sales,2,3.0,3.2,4.0,سعودي
+EMP022,finance,2,1.0,1.7,3.0,Philippines
+EMP023,Engineering,2,1.0,3.9,4.0,saudi
+EMP024,مبيعات,2,2.0,3.6,4.0,Philippines
+EMP025,Operations ,3,3.0,3.2,5.0,سعودي
+EMP026,Finance,3,3.0,1.2,3.0,غير سعودي
+EMP027,Operations ,3,1.0,2.1,5.0,Saudi
+EMP028,Engineering,3,1.0,0.7,5.0,Philippines
+EMP029,finance,3,3.0,1.0,3.0,saudi
+EMP030,مبيعات,3,1.0,2.9,3.0,Philippines
+EMP031,finance,3,3.0,3.1,4.0,KSA
+EMP032,Operations ,3,1.0,3.9,3.0,Egypt
+EMP033,Sales,3,3.0,1.6,3.0,KSA
+EMP034,Operations ,3,1.0,1.8,4.0,Egypt
+EMP035,finance,3,2.0,2.1,5.0,saudi
+EMP036,Operations ,3,2.0,1.2,5.0,Philippines
+EMP037,Engineering,4,4.0,2.6,1.0,KSA
+EMP038,finance,4,4.0,2.4,1.0,Philippines
+EMP039,Finance,4,4.0,2.1,1.0,سعودي
+EMP040,Engineering,4,4.0,2.1,1.0,India
+EMP041,Sales,4,4.0,3.0,1.0,سعودي
+EMP042,Engineering,4,2.0,3.4,5.0,غير سعودي
+EMP043,Sales,4,2.0,3.0,3.0,Saudi
+EMP044,Engineering,4,2.0,1.6,5.0,غير سعودي
+EMP045,Engineering,4,2.0,3.4,3.0,saudi
+EMP046,Sales,4,3.0,3.3,4.0,India
+EMP047,Operations ,4,1.0,1.9,4.0,سعودي
+EMP048,Finance,4,1.0,1.5,3.0,Philippines
+EMP049,Operations ,5,2.0,2.9,3.0,سعودي
+EMP050,Sales,5,1.0,1.0,5.0,India
+EMP051,مبيعات,5,1.0,1.2,4.0,saudi
+EMP052,finance,5,1.0,0.5,4.0,Non-Saudi
+EMP053,مبيعات,5,3.0,3.3,4.0,Saudi
+EMP054,Finance,5,3.0,2.8,4.0,Egypt
+EMP055,Engineering,5,3.0,3.0,5.0,Saudi
+EMP056,مبيعات,5,2.0,3.2,3.0,Non-Saudi
+EMP057,Engineering,5,3.0,2.1,5.0,saudi
+EMP058,Sales,5,1.0,2.5,5.0,Non-Saudi
+EMP059,مبيعات,5,3.0,1.0,4.0,KSA
+EMP060,Engineering,5,2.0,0.9,3.0,Non-Saudi
+EMP001,Finance,1,2.0,3.2,3.0,KSA

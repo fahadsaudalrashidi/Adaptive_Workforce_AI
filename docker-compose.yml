@@ -1,0 +1,89 @@
+# Adaptive Workforce AI — Local Development Docker Compose
+# LOCAL DEPLOYMENT ONLY — not for production use without proper infrastructure review.
+# No real credentials. All secrets must be configured via .env file.
+# See .env.example for required variables.
+
+version: "3.9"
+
+services:
+
+  # ── Main API service ───────────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: adaptive_workforce_api
+    ports:
+      - "${API_PORT:-8000}:8000"
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - ARTIFACT_STORE_PATH=/app/data/artifacts
+      - AUDIT_LOG_PATH=/app/data/audit_logs
+      - MODEL_STORE_PATH=/app/saved_models
+      # NOTE: Never put real secrets here. Use a secrets manager in production.
+    volumes:
+      - ./data:/app/data
+      - ./saved_models:/app/saved_models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+  # ── Optional: Streamlit demo interface ────────────────────────────────────
+  # Disabled by default. Enable only for demo/development purposes.
+  # streamlit:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: adaptive_workforce_streamlit
+  #   command: ["streamlit", "run", "frontend/app.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
+  #   ports:
+  #     - "${STREAMLIT_PORT:-8501}:8501"
+  #   environment:
+  #     - ENVIRONMENT=${ENVIRONMENT:-development}
+  #   volumes:
+  #     - ./data:/app/data
+  #   depends_on:
+  #     - api
+
+  # ── Optional: PostgreSQL placeholder ─────────────────────────────────────
+  # For audit log persistence in production. Requires proper DB configuration.
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: adaptive_workforce_db
+  #   environment:
+  #     - POSTGRES_DB=${POSTGRES_DB:-workforce_ai}
+  #     - POSTGRES_USER=${POSTGRES_USER:-appuser}
+  #     - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-CHANGE_ME_IN_PRODUCTION}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "${POSTGRES_PORT:-5432}:5432"
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-appuser}"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+
+  # ── Optional: Redis placeholder ───────────────────────────────────────────
+  # For job queue and session caching in production.
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: adaptive_workforce_redis
+  #   ports:
+  #     - "${REDIS_PORT:-6379}:6379"
+  #   command: redis-server --appendonly yes
+  #   volumes:
+  #     - redis_data:/data
+
+# volumes:
+#   postgres_data:
+#   redis_data:
+
+networks:
+  default:
+    name: adaptive_workforce_network

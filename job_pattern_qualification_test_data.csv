@@ -1,0 +1,10 @@
+EmployeeID,JobTitle,Department,YearsAtCompany,MonthlyIncome,Academic_degree,EducationField
+E1,Sales Executive,Sales,3,8000,Bachelor's,Marketing
+E2,Sales Executive,Sales,3,8500,Bachelor's,Marketing
+E3,Sales Executive,Sales,3,9000, Bachelor's,Marketing
+E4,Sales Executive,Sales,3,7000,Bachelor's,Engineering
+E5,Sales Executive,Sales,3,7500,Bachelor's,Engineering
+E6,Engineer,Engineering,8,15000,Ph.D,
+E7,Engineer,Engineering,8,16000,PhD,
+E8,Engineer,Engineering,8,14000,دكتوراه,
+E9,Analyst,Operations,5,10000,,

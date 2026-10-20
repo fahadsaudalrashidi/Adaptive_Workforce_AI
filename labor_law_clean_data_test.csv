@@ -1,0 +1,8 @@
+EmployeeID,Department,YearsAtCompany,MonthlySalary,SeparationType,LeaveBalance
+LLEMP001,Sales,1.0,10000,Resignation,5
+LLEMP002,Sales,3.0,10000,Resignation,20
+LLEMP003,Engineering,7.0,10000,Resignation,40
+LLEMP004,Engineering,12.0,10000,resigned,100
+LLEMP005,Finance,6.0,8000,Termination,10
+LLEMP006,Finance,4.0,12000,,15
+LLEMP007,HR,5.5,9000,End of contract,60

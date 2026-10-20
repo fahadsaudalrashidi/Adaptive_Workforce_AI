@@ -1,0 +1,11 @@
+EmployeeID,Department,PerformanceRating,YearsAtCompany,Nationality,ContractEndDate,IqamaExpiry
+EMP001,Engineering,5,6,Non-Saudi,2026-09-15,2026-08-25
+EMP002,Engineering,4,5,Saudi,2026-10-01,2026-10-01
+EMP003,Sales,3,2,Non-Saudi,2027-01-15,2026-08-20
+EMP004,Sales,2,1,Saudi,2025-12-01,2025-12-01
+EMP005,Operations,5,7,Non-Saudi,2026-08-15,2026-08-15
+EMP006,Operations,3,3,Saudi,2027-06-01,2027-06-01
+EMP007,Finance,4,4,Non-Saudi,not-a-real-date,2026-09-01
+EMP008,Finance,3,2,Saudi,2026-11-11,
+EMP009,HR,2,1,Non-Saudi,15-Mar-2027,20-Sep-2026
+EMP010,HR,5,8,Non-Saudi,2026-08-30,2027-02-01

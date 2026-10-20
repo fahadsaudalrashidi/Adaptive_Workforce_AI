@@ -1,0 +1,45 @@
+{
+  "_meta": {
+    "description": "Integration gate result for Phase 29.5",
+    "generated_at": "2026-06-01T06:13:43.731912+00:00"
+  },
+  "baseline": {
+    "mean_roc_auc": 0.8205,
+    "mean_mcc": 0.4748,
+    "mean_f1": 0.6973,
+    "mean_accuracy": 0.7431,
+    "best_model": "GradientBoosting"
+  },
+  "best_candidate": {
+    "model_name": "VotingEnsemble_top3",
+    "mean_roc_auc": 0.8471,
+    "mean_mcc": 0.4942,
+    "mean_f1": 0.7073,
+    "mean_accuracy": 0.7523
+  },
+  "decision": {
+    "passes": true,
+    "delta_auc": 0.0266,
+    "delta_mcc": 0.0194,
+    "delta_f1": 0.01,
+    "leakage_flags": 0,
+    "criteria_met": {
+      "roc_auc_improved_by_0.01": true,
+      "mcc_not_worse_by_0.01": true,
+      "f1_not_worse_by_0.01": true,
+      "no_leakage_flags": true
+    },
+    "recommendation": "INTEGRATE -- update platform metrics with new best model"
+  },
+  "update_platform_metrics": true,
+  "new_platform_metrics": {
+    "mean_roc_auc": 0.8471,
+    "std_roc_auc": 0.0234,
+    "mean_mcc": 0.4942,
+    "std_mcc": 0.0692,
+    "mean_f1": 0.7073,
+    "std_f1": 0.042,
+    "mean_accuracy": 0.7523,
+    "best_model": "VotingEnsemble_top3"
+  }
+}

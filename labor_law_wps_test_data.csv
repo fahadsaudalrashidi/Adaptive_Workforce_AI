@@ -1,0 +1,6 @@
+EmployeeID,Department,ContractSalary,ActualPaidSalary
+LLEMP001,Sales,10000,10000
+LLEMP002,Sales,10000,10005
+LLEMP003,Engineering,10000,10500
+LLEMP004,Engineering,8000,6000
+LLEMP005,Finance,12000,12000

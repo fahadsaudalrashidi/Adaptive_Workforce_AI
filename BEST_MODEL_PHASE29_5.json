@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "description": "Phase 29.5 best model result",
+    "generated_at": "2026-06-01T06:13:43.730750+00:00",
+    "baseline_auc": 0.8205,
+    "integration_decision": "INTEGRATE -- update platform metrics with new best model"
+  },
+  "best_model": {
+    "mean_roc_auc": 0.8471,
+    "std_roc_auc": 0.0234,
+    "mean_mcc": 0.4942,
+    "std_mcc": 0.0692,
+    "mean_f1": 0.7073,
+    "std_f1": 0.042,
+    "mean_accuracy": 0.7523,
+    "std_accuracy": 0.0339,
+    "mean_precision": 0.724,
+    "std_precision": 0.0454,
+    "mean_recall": 0.6932,
+    "std_recall": 0.0516,
+    "fold_aucs": [
+      0.8267,
+      0.8306,
+      0.8882,
+      0.8315,
+      0.8585
+    ],
+    "oof_ece": 0.0379,
+    "oof_confusion": {
+      "tp": 357,
+      "fp": 137,
+      "fn": 158,
+      "tn": 539
+    },
+    "model_name": "VotingEnsemble_top3",
+    "variant": "ensemble",
+    "hp_tuned": false
+  },
+  "threshold_optimization": {
+    "mcc_threshold": {
+      "threshold": 0.4,
+      "score": 0.5093
+    },
+    "f1_threshold": {
+      "threshold": 0.35,
+      "score": 0.7405
+    },
+    "balanced_threshold": {
+      "threshold": 0.25,
+      "score": 0.7726
+    },
+    "hr_conservative_threshold": {
+      "threshold": 0.35,
+      "precision_at_85_recall": 0.6446
+    }
+  },
+  "calibration_comparison": {
+    "brier_by_method": {
+      "uncalibrated": 0.1602,
+      "platt": 0.1693,
+      "isotonic": 0.168
+    },
+    "best_calibration": "uncalibrated"
+  },
+  "engineered_features": [
+    "demand_load"
+  ],
+  "decision": {
+    "passes": true,
+    "delta_auc": 0.0266,
+    "delta_mcc": 0.0194,
+    "delta_f1": 0.01,
+    "leakage_flags": 0,
+    "criteria_met": {
+      "roc_auc_improved_by_0.01": true,
+      "mcc_not_worse_by_0.01": true,
+      "f1_not_worse_by_0.01": true,
+      "no_leakage_flags": true
+    },
+    "recommendation": "INTEGRATE -- update platform metrics with new best model"
+  }
+}

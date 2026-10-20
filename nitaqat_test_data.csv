@@ -1,0 +1,62 @@
+﻿EmployeeID,Nationality,Department,Age,JobLevel,MonthlyIncome
+EMP001,Pakistan,Sales,42,1,18705
+EMP002,Pakistan,Engineering,55,1,15961
+EMP003,Yemen,Operations,39,2,10732
+EMP004,السعودية,Operations,27,2,11716
+EMP005,KSA,Operations ,42,5,20867
+EMP006,السعودية,Sales,44,2,17755
+EMP007,Philippines,Finance,28,1,11993
+EMP008,غير سعودي,Operations ,27,5,10646
+EMP009,,finance,45,3,8065
+EMP010,Saudi Arabia,مبيعات,37,1,18780
+EMP011,Philippines,Engineering,39,1,16074
+EMP012,Saudi,Sales,50,1,12641
+EMP013,Yemen,Engineering,46,5,17082
+EMP014,Saudi,Sales,54,3,14851
+EMP015,Jordan,Finance,28,4,14512
+EMP016,Egypt,Finance,49,5,16773
+EMP017,Yemen,Operations,41,3,18240
+EMP018,Saudi,Operations ,23,5,14294
+EMP019,Non-Saudi,Engineering,24,3,12590
+EMP020,Pakistan,finance,34,4,10121
+EMP021,Saudi,Finance,45,5,10838
+EMP022,Egypt,Operations ,27,1,21670
+EMP023,Non-Saudi,Operations,41,4,8961
+EMP024,saudi,مبيعات,57,5,7536
+EMP025,Philippines,مبيعات,27,5,15867
+EMP026,Non-Saudi,Finance,27,4,11198
+EMP027,Philippines,finance,56,3,7527
+EMP028,,مبيعات,30,1,14785
+EMP029,غير سعودي,Finance,53,4,17987
+EMP030,السعودية,Operations,34,3,6459
+EMP031,Jordan,Finance,49,5,13802
+EMP032,Yemen,Operations,24,1,8478
+EMP033,Yemen,finance,44,2,15187
+EMP034,KSA,Finance,53,5,18788
+EMP035,Egypt,Operations,34,4,18852
+EMP036,Saudi,finance,44,4,18541
+EMP037,saudi,Operations ,29,3,10715
+EMP038,Yemen,Finance,27,5,16191
+EMP039,Saudi Arabia,Operations,22,5,16388
+EMP040,Jordan,Operations ,39,4,20428
+EMP041,KSA,Operations,40,4,17124
+EMP042,Jordan,Sales,24,2,18088
+EMP043,Saudi,Sales,30,1,7574
+EMP044,Egypt,Sales,43,4,10780
+EMP045,Egypt,finance,35,2,11894
+EMP046,,Finance,30,2,16317
+EMP047,Non-Saudi,Operations,22,1,19906
+EMP048,,مبيعات,23,1,11441
+EMP049,KSA,مبيعات,44,1,13952
+EMP050,Jordan,Operations ,26,2,17997
+EMP051,غير سعودي,Finance,52,2,9096
+EMP052,Egypt,Operations ,41,3,12156
+EMP053,saudi,Finance,31,3,9123
+EMP054,KSA,finance,44,2,8451
+EMP055,,Sales,27,3,17080
+EMP056,Saudi Arabia,Engineering,33,4,20023
+EMP057,السعودية,Operations,39,4,8387
+EMP058,Non-Saudi,Engineering,45,4,17046
+EMP059,saudi,Operations,26,1,17108
+EMP060,Non-Saudi,Operations ,34,2,17914
+EMP001,Pakistan,Sales,42,1,18705

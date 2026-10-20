@@ -1,0 +1,288 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-navy-900 dark:text-slate-100;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Arabic numerals in data-dense tables/KPIs stay Western (tabular-nums)
+     even in RTL — standard practice for financial/business data in Arabic
+     UI (Bloomberg Arabic, Qiwa, etc. all do this); only prose text mirrors. */
+  [dir='rtl'] .tabular-nums,
+  [dir='rtl'] .value-display {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-400/30 dark:bg-slate-600/40 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400/60 dark:bg-slate-600/70;
+  }
+}
+
+@layer components {
+  /* Phase 15 — real-screenshot review: card borders sat flush against
+     their content (tables in particular were wrapped as a bare
+     `<div class="card overflow-x-auto"><table>` with no padding at all,
+     so the header row's text touched the card's top border). Rather than
+     patch every page's markup individually, `.card` itself now carries a
+     small default block padding — Tailwind's utilities layer (loaded
+     after `components` below) always wins the cascade, so this is a
+     genuine no-op on every existing `className="card p-4"` / `p-5` / `p-6`
+     usage and only takes effect on the bare, padding-less `.card` divs
+     (the table wrappers) it was meant to fix. One rule, propagates
+     everywhere, no per-page edits. */
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm;
+    @apply dark:shadow-elevation-1 transition-shadow duration-base;
+    padding-block: 0.625rem;
+  }
+
+  .card-elevated {
+    @apply bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-md;
+    @apply dark:shadow-elevation-2;
+  }
+
+  .card-glass {
+    @apply bg-white/60 dark:bg-slate-800/60 backdrop-blur-md rounded-xl border border-white/20 dark:border-slate-700/50 shadow-lg;
+  }
+
+  /* Phase 11 — the top of the card-elevation hierarchy: primary/hero KPI
+     cards and the executive-summary headline. Visibly heavier than .card
+     (deeper navy, stronger shadow, optional top accent bar via a sibling
+     span with .card-hero-accent) so a hero number doesn't sit at the same
+     visual weight as a footer disclosure box. */
+  .card-hero {
+    @apply relative bg-navy-700 dark:bg-navy-700 rounded-2xl border border-navy-500/60;
+    @apply shadow-elevation-3 overflow-hidden;
+  }
+
+  .card-hero-accent {
+    @apply absolute top-0 left-0 right-0 h-1 bg-gradient-gold-accent;
+    box-shadow: 0 0 12px 0 rgba(212, 175, 55, 0.5);
+  }
+
+  /* Phase 11 — secondary/dense surfaces (data tables, source-citation
+     footers) sit visibly BELOW .card in the hierarchy: flatter, quieter
+     border, no shadow. */
+  .card-flat {
+    @apply bg-slate-50/60 dark:bg-navy-800/60 rounded-lg border border-slate-200/70 dark:border-navy-600/50;
+  }
+
+  .card-interactive {
+    @apply transition-all duration-base ease-executive;
+    @apply hover:shadow-elevation-2 hover:-translate-y-0.5 hover:border-navy-400/60;
+  }
+
+  /* Phase 14 — the single row-hover treatment for every sortable table
+     across the platform (CEO Dashboard's department ranking, and now the
+     7 feature pages' tables) — one definition instead of each page
+     re-declaring its own hover:bg-* value, so a future palette change
+     only has to happen once. */
+  .row-hover {
+    @apply transition-colors duration-base ease-executive hover:bg-navy-800/50 dark:hover:bg-navy-800/50;
+  }
+
+  /* Phase 14 — row-hover for the 7 feature pages' light/dark `.card` tables
+     (as opposed to `.row-hover`, which assumes a permanently-dark
+     navy-hero background like WorkforceCompositionRiver's). Same motion
+     token, colors matched to each mode's actual card background instead of
+     a fixed dark-navy tint that would look wrong on a white light-mode
+     card. */
+  .row-hover-card {
+    @apply transition-colors duration-base ease-executive hover:bg-slate-50 dark:hover:bg-navy-800/40;
+  }
+
+  /* Phase 14 — hover-reveal detail panel (the pattern introduced for CEO
+     Dashboard's StatChip in Phase 13, now shared). Absolutely positioned
+     so it never shifts the trigger element's own footprint; pair with a
+     `relative group` wrapper on the trigger. */
+  .hover-detail-panel {
+    @apply absolute z-20 px-3 py-2 rounded-lg card shadow-elevation-2;
+    @apply text-[11px] text-slate-600 dark:text-navy-100 leading-snug;
+    @apply opacity-0 translate-y-[-4px] pointer-events-none;
+    @apply group-hover:opacity-100 group-hover:translate-y-0;
+    @apply transition-all duration-base ease-executive;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200;
+    @apply text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100;
+    @apply hover:bg-slate-100 dark:hover:bg-slate-700/50;
+  }
+
+  .nav-item-active {
+    @apply bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400;
+    @apply border border-blue-200 dark:border-blue-800/50;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium;
+    @apply transition-colors duration-200 shadow-sm;
+  }
+
+  .btn-ghost {
+    @apply px-3 py-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100;
+    @apply hover:bg-slate-100 dark:hover:bg-slate-700/50 rounded-lg text-sm font-medium transition-all duration-200;
+  }
+
+  .governance-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+
+  .metric-label {
+    @apply text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider;
+  }
+
+  .section-title {
+    @apply text-sm font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider;
+  }
+
+  .value-display {
+    @apply text-2xl font-bold text-slate-900 dark:text-slate-100 tabular-nums;
+  }
+
+  /* Phase 11 — skeleton loading, shape-matched to the eventual KPI/table
+     layout rather than a spinner, so the page feels considered while
+     waiting on real analysis latency. */
+  .skeleton {
+    @apply relative overflow-hidden bg-slate-200 dark:bg-navy-600/60 rounded-md;
+  }
+
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(148, 163, 184, 0.15),
+      transparent
+    );
+    animation: shimmer 1.8s ease-in-out infinite;
+  }
+
+  /* Phase 11 — premium empty-state icon ring: turns the honest "not
+     detected" pattern into a considered, intentional-looking moment rather
+     than an error box. */
+  .empty-state-icon-ring {
+    @apply flex items-center justify-center w-14 h-14 rounded-2xl;
+    @apply bg-gradient-to-br from-navy-600 to-navy-700 border border-navy-500/50;
+    @apply shadow-elevation-1;
+  }
+
+  /* Phase 11B — ambient page-level atmosphere (dark mode only; light mode
+     stays clean/flat, the glow is a dark-navy-specific device). Two fixed
+     radial glows anchored top-left (blue) and top-right (gold), both very
+     low opacity, positioned behind all content. Replaces the flat
+     navy-900 everywhere with genuine depth — see AppLayout.tsx. */
+  .ambient-glow {
+    @apply dark:bg-navy-900;
+  }
+  .dark .ambient-glow::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(700px circle at 15% -5%, rgba(59, 130, 246, 0.10), transparent 60%),
+      radial-gradient(600px circle at 90% 0%, rgba(212, 175, 55, 0.08), transparent 55%);
+  }
+  .ambient-glow > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Phase 11B — hero KPI cards, pushed further: the Phase 11 gold top bar
+     alone read as too subtle to notice at a glance (per the honest
+     self-critique). Adds a soft ambient wash INSIDE the card (not just a
+     3px edge line), a heavier border, and a bigger footprint via padding —
+     apply alongside .card-hero, not instead of it. */
+  .card-hero-glow {
+    @apply bg-gradient-to-br from-navy-700 via-navy-700 to-navy-600;
+    background-image:
+      radial-gradient(480px circle at 100% 0%, rgba(212, 175, 55, 0.16), transparent 60%),
+      linear-gradient(135deg, theme('colors.navy.700'), theme('colors.navy.600'));
+    @apply border-navy-400/40;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent;
+  }
+
+  .border-gradient {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.2));
+  }
+
+  .animate-stagger-1 { animation-delay: 0.1s; }
+  .animate-stagger-2 { animation-delay: 0.2s; }
+  .animate-stagger-3 { animation-delay: 0.3s; }
+  .animate-stagger-4 { animation-delay: 0.4s; }
+}
+
+/* ── Print / PDF Styles ──────────────────────────────────────────────────── */
+/* Used by ExecutiveReportPreview: the page is visible on screen;            */
+/* printing hides only controls (.no-print) and applies A4 page layout.      */
+@media print {
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide navigation controls, back/print buttons */
+  .no-print { display: none !important; }
+
+  /* A4 page divs — remove shadow, enforce page breaks */
+  .print-page {
+    page-break-after: always;
+    box-shadow: none !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    padding: 18mm !important;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+  }
+
+  /* Ensure colour rendering in print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}

@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWI Board Briefing &mdash; STC — Workforce Intelligence</title>
+  
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #e2e8f0; font-family: 'Segoe UI', Georgia, system-ui, sans-serif; }
+
+  .slide {
+    width: 297mm; height: 210mm;
+    background: #ffffff;
+    padding: 14mm 20mm 16mm 20mm;
+    display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+    page-break-after: always;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    margin-bottom: 8mm;
+  }
+  .slide:last-child { page-break-after: auto; margin-bottom: 0; }
+
+  .slide::before {
+    content: '';
+    position: absolute; left: 0; top: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #0f172a 0%, #1e40af 50%, #3b82f6 100%);
+  }
+  .slide-cover::before { height: 6px; }
+
+  .slide-number {
+    position: absolute; bottom: 8mm; right: 20mm;
+    font-size: 7.5pt; color: #94a3b8; font-family: monospace;
+  }
+  .slide-logo {
+    position: absolute; bottom: 8mm; left: 20mm;
+    font-size: 7pt; color: #1e40af; font-weight: 700; letter-spacing: 0.12em;
+  }
+  .disclaimer-footer {
+    position: absolute; bottom: 12mm; left: 20mm; right: 20mm;
+    font-size: 6.5pt; color: #94a3b8; line-height: 1.4;
+    border-top: 1px solid #e2e8f0; padding-top: 4pt;
+  }
+
+  h1 { font-size: 26pt; font-weight: 800; color: #0f172a; line-height: 1.1; }
+  h2 { font-size: 15pt; font-weight: 700; color: #0f172a; margin-bottom: 8pt; }
+  h3 { font-size: 10pt; font-weight: 600; color: #374151; margin-bottom: 5pt; }
+  p  { font-size: 9pt; line-height: 1.6; color: #374151; }
+
+  .section-label {
+    font-size: 7pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.12em; color: #1e40af;
+    padding-bottom: 5pt; border-bottom: 2px solid #dbeafe;
+    margin-bottom: 9pt;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .cover-hero {
+    border-left: 5px solid #dc2626; padding: 10px 16px;
+    background: #fef2f2; margin-bottom: 10pt;
+  }
+  .cover-hero-label {
+    font-size: 7.5pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.10em; color: #991b1b; margin-bottom: 3pt;
+  }
+  .cover-hero-value {
+    font-size: 44pt; font-weight: 900; color: #dc2626;
+    font-family: 'Courier New', monospace; line-height: 1;
+  }
+  .cover-hero-sub { font-size: 8pt; color: #6b7280; margin-top: 4pt; }
+
+  .kpi-strip { display: flex; gap: 8px; }
+  .kpi-card {
+    flex: 1; border: 1px solid #e2e8f0; border-top: 3px solid #1e40af;
+    padding: 8px 10px; background: #f8fafc;
+  }
+  .kpi-label { font-size: 6.5pt; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+  .kpi-value { font-size: 14pt; font-weight: 800; font-family: monospace; margin-bottom: 2px; }
+  .kpi-sub   { font-size: 7pt; color: #6b7280; }
+
+  .ruled-section { border-left: 3px solid #1e40af; padding-left: 12px; margin-bottom: 10pt; }
+  .ruled-label {
+    font-size: 7pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #1e40af; margin-bottom: 4pt;
+  }
+
+  .urgency-box {
+    background: #fffbeb; border-left: 4px solid #d97706;
+    padding: 8px 12px; margin-bottom: 9pt;
+  }
+  .urgency-label {
+    font-size: 7pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #92400e; margin-bottom: 4pt;
+  }
+
+  .board-rec {
+    background: #f0fdf4; border-left: 5px solid #16a34a;
+    padding: 10px 14px; margin-top: 9pt;
+  }
+  .board-rec-label {
+    font-size: 7pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: #15803d; margin-bottom: 5pt;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 10pt; }
+
+  .dept-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; }
+  .dept-table thead tr { border-bottom: 2px solid #1e40af; }
+  .dept-table th {
+    text-align: left; font-size: 7pt; font-weight: 700;
+    text-transform: uppercase; color: #374151; padding: 5px 7px; letter-spacing: 0.04em;
+  }
+  .dept-table tbody tr:nth-child(even) { background: #f8fafc; }
+  .dept-table td { padding: 5px 7px; border-bottom: 1px solid #f1f5f9; color: #374151; }
+
+  .priority-list { list-style: none; }
+  .priority-list li {
+    display: flex; gap: 10px; padding: 7px 0;
+    border-bottom: 1px solid #f1f5f9; align-items: flex-start;
+  }
+  .prio-badge {
+    font-size: 6.5pt; font-weight: 700; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 3px; flex-shrink: 0;
+    margin-top: 2px; white-space: nowrap;
+  }
+
+  .rec-item { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid #f1f5f9; }
+  .rec-num {
+    width: 22px; height: 22px; background: #1e3a8a;
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; flex-shrink: 0;
+    font-size: 8.5pt; font-weight: 800; color: #ffffff; margin-top: 1px;
+  }
+
+  .gov-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-top: 8pt; }
+  .gov-item {
+    border: 1px solid #dcfce7; border-radius: 4px;
+    padding: 5px 8px; display: flex; align-items: center; gap: 6px;
+    font-size: 8.5pt; color: #374151; background: #f0fdf4;
+  }
+  .gov-check { color: #16a34a; font-size: 11pt; flex-shrink: 0; }
+
+  .metric-row { display: flex; gap: 10px; margin-top: 9pt; }
+  .metric-box {
+    flex: 1; border: 1px solid #e2e8f0; border-top: 3px solid #1e40af;
+    padding: 8px; text-align: center; background: #f8fafc;
+  }
+  .metric-label { font-size: 7pt; color: #64748b; text-transform: uppercase; }
+  .metric-val { font-size: 14pt; font-weight: 800; font-family: monospace; margin-top: 3px; }
+
+  .chain-box {
+    background: #fef2f2; border-left: 4px solid #dc2626;
+    padding: 9px 12px; margin-top: 9pt;
+  }
+  .chain-label {
+    font-size: 6.5pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #991b1b; margin-bottom: 7px;
+  }
+  .chain-row { display: flex; gap: 6px; align-items: center; }
+  .chain-step { flex: 1; text-align: center; }
+  .chain-step-val { font-size: 12pt; font-weight: 800; font-family: monospace; }
+  .chain-step-lbl { font-size: 7pt; color: #64748b; margin-top: 2px; line-height: 1.3; }
+  .chain-op { color: #94a3b8; font-size: 14pt; font-weight: 800; flex-shrink: 0; }
+
+  .pull-quote {
+    font-style: italic; border-left: 5px solid #1e40af; padding-left: 16px;
+    margin-bottom: 14pt; font-size: 12pt; line-height: 1.65; color: #0f172a;
+  }
+
+  .timeline-row { display: flex; margin-top: 12pt; border: 1px solid #e2e8f0; }
+  .timeline-step {
+    flex: 1; text-align: center; padding: 10px 8px;
+    border-right: 1px solid #e2e8f0;
+  }
+  .timeline-step:last-child { border-right: none; }
+  .timeline-month {
+    font-size: 7pt; color: #64748b; text-transform: uppercase;
+    margin-bottom: 5px; font-weight: 700; letter-spacing: 0.06em;
+  }
+  .timeline-val { font-size: 13pt; font-weight: 800; font-family: monospace; }
+  .timeline-lbl { font-size: 7.5pt; color: #6b7280; margin-top: 3px; }
+
+  .roi-row { display: flex; gap: 8px; margin-top: 10pt; }
+  .roi-card {
+    flex: 1; border: 1px solid #e2e8f0; border-top: 3px solid #16a34a;
+    padding: 8px 10px; background: #f0fdf4;
+  }
+
+  @media print {
+    body { background: #ffffff; }
+    .slide { box-shadow: none; margin-bottom: 0; page-break-after: always; }
+    @page { size: A4 landscape; margin: 0; }
+  }
+</style>
+
+</head>
+<body>
+
+<div class="slide slide-cover">
+  <div style="flex:1;display:flex;flex-direction:column">
+
+    <!-- Classification -->
+    <div style="margin-bottom:9pt">
+      <span style="font-size:7pt;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;
+                   color:#1e40af;border:1px solid #bfdbfe;border-radius:3px;
+                   padding:3px 10px;background:#eff6ff">
+        Board Briefing Document &mdash; Strictly Confidential &nbsp;&middot;&nbsp; June 02, 2026
+      </span>
+    </div>
+
+    <!-- Company + Title -->
+    <div style="margin-bottom:10pt">
+      <p style="font-size:8.5pt;color:#64748b;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3pt">STC — Workforce Intelligence</p>
+      <h1>Workforce Risk<br/>Intelligence Report</h1>
+    </div>
+
+    <!-- Financial Exposure HERO -->
+    <div class="cover-hero">
+      <div class="cover-hero-label">Total Financial Exposure Identified</div>
+      <div class="cover-hero-value">SAR 26.5M</div>
+      <div class="cover-hero-sub">
+        221 employees in elevated risk bands &times; SAR&nbsp;120,000 conservative turnover cost
+        &nbsp;&middot;&nbsp; SHRM Human Capital Benchmarking methodology
+      </div>
+    </div>
+
+    <!-- Three KPI cards -->
+    <div class="kpi-strip" style="margin-bottom:10pt">
+      <div class="kpi-card">
+        <div class="kpi-label">Monthly Cost of Inaction</div>
+        <div class="kpi-value" style="color:#d97706">SAR 2.2M</div>
+        <div class="kpi-sub">accumulating per month of delay</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Potential Savings Available</div>
+        <div class="kpi-value" style="color:#16a34a">SAR 9.3M</div>
+        <div class="kpi-sub">with targeted intervention (35% recovery)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Employees Requiring Attention</div>
+        <div class="kpi-value" style="color:#dc2626">221</div>
+        <div class="kpi-sub">of 847 total workforce (26.1%)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Highest Risk Department</div>
+        <div class="kpi-value" style="color:#dc2626;font-size:10pt;line-height:1.2;margin-top:4px">Engineering</div>
+        <div class="kpi-sub">requires priority leadership attention</div>
+      </div>
+    </div>
+
+    <!-- Executive summary paragraph -->
+    <div style="border-left:3px solid #1e40af;padding-left:12px">
+      <p style="font-size:8pt;color:#374151;line-height:1.55">Engineering and Operations departments concentrate 62% of Priority Review employees despite representing only 40% of total headcount. Without intervention, monthly attrition cost is estimated at SAR 2.2M.</p>
+    </div>
+
+  </div>
+  
+      <div class="slide-logo">AWI — Workforce Intelligence</div>
+      <div class="slide-number">1 / 11</div>
+      <div class="disclaimer-footer">
+        Statistical indicators only &nbsp;&middot;&nbsp; Not deterministic predictions &nbsp;&middot;&nbsp;
+        Qualified human review required before any employment decision &nbsp;&middot;&nbsp;
+        PDPL-compliant &nbsp;&middot;&nbsp; STC — Workforce Intelligence &nbsp;&middot;&nbsp; Strictly Confidential
+      </div>
+</div>
+
+<div class="slide">
+  <div class="section-label">
+    <span>Executive Situation Assessment</span>
+    <span style="font-weight:400;color:#64748b;font-size:7pt;text-transform:none;letter-spacing:0">June 02, 2026</span>
+  </div>
+  <h2>Leadership Situation Assessment</h2>
+
+  <div class="pull-quote">&ldquo;26% of STC's workforce is in an elevated-risk stability zone — a SAR 26.5M financial exposure requiring board-level authorisation.&rdquo;</div>
+
+  <div class="two-col">
+    <div class="ruled-section">
+      <div class="ruled-label">The Situation</div>
+      <p class="body-text" style="font-size:9pt;line-height:1.6;color:#374151">The organisation's workforce data reveals 221 employees (26.1% of the workforce) in elevated risk stability bands. Immediate leadership assessment and targeted intervention are required to prevent financial and operational impact across critical departments.</p>
+    </div>
+    <div class="ruled-section">
+      <div class="ruled-label">Key Leadership Finding</div>
+      <p class="body-text" style="font-size:9pt;line-height:1.6;color:#374151">Engineering and Operations departments concentrate 62% of Priority Review employees despite representing only 40% of total headcount. Without intervention, monthly attrition cost is estimated at SAR 2.2M.</p>
+    </div>
+  </div>
+
+  <div class="urgency-box">
+    <div class="urgency-label">Why Leadership Must Act Now</div>
+    <div style="display:flex;gap:20px">
+      <div style="flex:1">
+        <p style="font-size:11pt;font-weight:800;color:#92400e;font-family:monospace">SAR 2.2M</p>
+        <p style="font-size:8pt;color:#78350f">accumulating every month of inaction</p>
+      </div>
+      <div style="flex:1">
+        <p style="font-size:11pt;font-weight:800;color:#92400e;font-family:monospace">221 employees</p>
+        <p style="font-size:8pt;color:#78350f">in elevated risk bands today</p>
+      </div>
+      <div style="flex:1">
+        <p style="font-size:11pt;font-weight:800;color:#92400e;font-family:monospace">SAR 9.3M</p>
+        <p style="font-size:8pt;color:#78350f">recoverable with targeted action</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="board-rec">
+    <div class="board-rec-label">Board Recommended Action</div>
+    <p style="font-size:10pt;font-weight:700;color:#15803d">Authorise a 90-day Workforce Stabilisation Programme with monthly board progress reporting.</p>
+  </div>
+
+  
+      <div class="slide-logo">AWI — Workforce Intelligence</div>
+      <div class="slide-number">2 / 11</div>
+      <div class="disclaimer-footer">
+        Statistical indicators only &nbsp;&middot;&nbsp; Not deterministic predictions &nbsp;&middot;&nbsp;
+        Qualified human review required before any employment decision &nbsp;&middot;&nbsp;
+        PDPL-compliant &nbsp;&middot;&nbsp; STC — Workforce Intelligence &nbsp;&middot;&nbsp; Strictly Confidential
+      </div>
+</div>
+
+<div class="slide">
+  <div class="section-label"><span>Financial Exposure</span></div>
+  <h2>Financial Exposure &amp; Calculation Methodology</h2>
+
+  <!-- Dominant financial figure -->
+  <div style="text-align:center;margin:4pt 0 10pt">
+    <div style="font-size:7pt;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#991b1b;margin-bottom:3pt">
+      Total Financial Exposure at Risk
+    </div>
+    <div style="font-size:46pt;font-weight:900;color:#dc2626;font-family:'Courier New',monospace;line-height:1">
+      SAR 26.5M
+    </div>
+    <div style="font-size:8.5pt;color:#64748b;margin-top:4pt">
+      221 employees &times; SAR 120,000 conservative turnover cost &middot; SHRM methodology
+    </div>
+  </div>
+
+  <!-- Calculation chain -->
+  <div class="chain-box">
+    <div class="chain-label">Full Calculation Methodology &mdash; Every Assumption Documented</div>
+    <div class="chain-row">
+      <div class="chain-step">
+        <div class="chain-step-val" style="color:#d97706">221</div>
+        <div class="chain-step-lbl">At-Risk Employees<br/>(Priority + Strategic Concern)</div>
+      </div>
+      <div class="chain-op">&times;</div>
+      <div class="chain-step">
+        <div class="chain-step-val" style="color:#64748b">SAR 120K</div>
+        <div class="chain-step-lbl">Conservative turnover<br/>cost per employee</div>
+      </div>
+      <div class="chain-op">=</div>
+      <div class="chain-step">
+        <div class="chain-step-val" style="color:#dc2626">SAR 26.5M</div>
+        <div class="chain-step-lbl">Total Financial<br/>Exposure</div>
+      </div>
+      <div class="chain-op">&times;</div>
+      <div class="chain-step">
+        <div class="chain-step-val" style="color:#64748b">35%</div>
+        <div class="chain-step-lbl">Recovery rate<br/>(conservative benchmark)</div>
+      </div>
+      <div class="chain-op">=</div>
+      <div class="chain-step">
+        <div class="chain-step-val" style="color:#16a34a">SAR 9.3M</div>
+        <div class="chain-step-lbl">Potential Savings<br/>(Conservative)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 KPIs -->
+  <div class="kpi-strip" style="margin-top:10pt">
+    <div class="kpi-card">
+      <div class="kpi-label">Financial Exposure</div>
+      <div class="kpi-value" style="color:#dc2626">SAR 26.5M</div>
+      <div class="kpi-sub">221 at-risk &times; SAR 120K</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Monthly Cost of Inaction</div>
+      <div class="kpi-value" style="color:#d97706">SAR 2.2M</div>
+      <div class="kpi-sub">Exposure &divide; 12 months</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Potential Savings</div>
+      <div class="kpi-value" style="color:#16a34a">SAR 9.3M</div>
+      <div class="kpi-sub">35% conservative recovery</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Retainable Employees</div>
+      <div class="kpi-value" style="color:#1e40af">61</div>
+      <div class="kpi-sub">28% retention benchmark</div>
+    </div>
+  </div>
+
+  
+      <div class="slide-logo">AWI — Workforce Intelligence</div>
+      <div class="slide-number">3 / 11</div>
+      <div class="disclaimer-footer">
+        Statistical indicators only &nbsp;&middot;&nbsp; Not deterministic predictions &nbsp;&middot;&nbsp;
+        Qualified human review required before any employment decision &nbsp;&middot;&nbsp;
+        PDPL-compliant &nbsp;&middot;&nbsp; STC — Workforce Intelligence &nbsp;&middot;&nbsp; Strictly Confidential
+      </div>
+</div>
+
+<div class="slide">
+  <div class="section-label"><span>Cost of Inaction</span></div>
+  <h2>Cost of Inaction &mdash; Monthly Accumulation</h2>
+
+  <p style="font-size:9.5pt;color:#374151;line-height:1.6;margin-bottom:10pt">
+    Every month that leadership does not act, <strong style="color:#d97706">SAR 2.2M</strong> in
+    workforce attrition cost accumulates. This is not a projection &mdash; it is a minimum conservative
+    estimate based on 221 employees currently in elevated risk stability bands and SHRM&rsquo;s
+    documented turnover cost of SAR 120,000 per employee. The table below shows the cumulative
+    cost of delayed intervention at four decision points.
+  </p>
+
+  <!-- Monthly accumulation timeline -->
+  <div class="timeline-row">
+    <div class="timeline-step">
+      <div class="timeline-month">If action taken now</div>
+      <div class="timeline-val" style="color:#16a34a">SAR 9.3M</div>
+      <div class="timeline-lbl">savings recoverable</div>
+    </div>
+    <div class="timeline-step" style="background:#fffbeb">
+      <div class="timeline-month">1 month delayed</div>
+      <div class="timeline-val" style="color:#d97706">SAR 2.2M</div>
+      <div class="timeline-lbl">additional cost incurred</div>
+    </div>
+    <div class="timeline-step" style="background:#fff7ed">
+      <div class="timeline-month">3 months delayed</div>
+      <div class="timeline-val" style="color:#ea580c">SAR 6.6M</div>
+      <div class="timeline-lbl">cumulative additional cost</div>
+    </div>
+    <div class="timeline-step" style="background:#fef2f2">
+      <div class="timeline-month">6 months delayed</div>
+      <div class="timeline-val" style="color:#dc2626">SAR 13.3M</div>
+      <div class="timeline-lbl">cumulative additional cost</div>
+    </div>
+    <div class="timeline-step" style="background:#fef2f2;border-top:3px solid #dc2626">
+      <div class="timeline-month">12 months delayed</div>
+      <div class="timeline-val" style="color:#991b1b">SAR 26.5M</div>
+      <div class="timeline-lbl">full exposure realised</div>
+    </div>
+  </div>
+
+  <div class="urgency-box" style="margin-top:12pt">
+    <div class="urgency-label">Why Each Month Matters</div>
+    <p style="font-size:9pt;color:#78350f;line-height:1.6">
+      Workforce attrition does not wait for the next board cycle. Employees in the Priority Review band
+      represent the organisation&rsquo;s highest departure risk today. Each passing quarter without
+      structured intervention allows these employees to reach exit decisions that cannot be reversed.
+      At 221 employees at risk, a 30-day action mandate is the threshold between recoverable
+      and unrecoverable talent loss.
+    </p>
+  </div>
+
+  <div class="board-rec">
+    <div class="board-rec-label">Board Urgency Assessment</div>
+    <p style="font-size:9.5pt;font-weight:700;color:#15803d">
+      94 Priority Review employees represent the most urgent intervention target.
+      Delayed action converts SAR 2.2M monthly cost into a structural, recurring expense
+      that compounds over subsequent quarters.
+    </p>
+  </div>
+
+  
+      <div class="slide-logo">AWI — Workforce Intelligence</div>
+      <div class="slide-number">4 / 11</div>
+      <div class="disclaimer-footer">
+        Statistical indicators only &nbsp;&middot;&nbsp; Not deterministic predictions &nbsp;&middot;&nbsp;
+        Qualified human review required before any employment decision &nbsp;&middot;&nbsp;
+        PDPL-compliant &nbsp;&middot;&nbsp; STC — Workforce Intelligence &nbsp;&middot;&nbsp; Strictly Confidential
+      </div>
+</div>
+
+<div class="slide">
+  <div class="section-label"><span>Department Financial Intelligence</span></div>
+  <h2>Department Risk &amp; Financial Exposure — Ranked by Risk Score</h2>
+  <table class="dept-table">
+    <thead><tr>
+      <th>#</th><th>Department</th>
+      <th style="text-align:center">Headcount</th>
+      <th style="text-align:center">At-Risk</th>
+      <th style="text-align:center">Urgency</th>
+      <th style="text-align:right">Exposure</th>
+      <th style="text-align:right">Potential Savings</th>
+      <th style="text-align:right">Monthly Cost</th>
+    </tr></thead>
+    <tbody><tr>
+          <td style="color:#94a3b8;font-size:7.5pt">1</td>
+          <td style="font-weight:600;color:#0f172a">Engineering</td>
+          <td style="text-align:center;font-family:monospace;color:#374151">142</td>
+          <td style="text-align:center;color:#dc2626;font-weight:700;font-family:monospace">62</td>
+          <td style="text-align:center;font-size:7.5pt;font-weight:700;color:#dc2626">Immediate</td>
+          <td style="text-align:right;color:#dc2626;font-family:monospace;font-weight:700">SAR 7.4M</td>
+          <td style="text-align:right;color:#16a34a;font-family:monospace">SAR 2.6M</td>
+          <td style="text-align:right;color:#d97706;font-family:monospace;font-size:8pt">SAR 620K/mo</td>
+        </tr><tr>
+          <td style="color:#94a3b8;font-size:7.5pt">2</td>
+          <td style="font-weight:600;color:#0f172a">Operations</td>
+          <td style="text-align:center;font-family:monospace;color:#374151">198</td>
+          <td style="text-align:center;color:#dc2626;font-weight:700;font-family:monospace">59</td>
+          <td style="text-align:center;font-size:7.5pt;font-weight:700;color:#dc2626">Immediate</td>
+          <td style="text-align:right;color:#dc2626;font-family:monospace;font-weight:700">SAR 7.1M</td>
+          <td style="text-align:right;color:#16a34a;font-family:monospace">SAR 2.5M</td>
+          <td style="text-align:right;color:#d97706;font-family:monospace;font-size:8pt">SAR 590K/mo</td>
+        </tr><tr>
+          <td style="color:#94a3b8;font-size:7.5pt">3</td>
+          <td style="font-weight:600;color:#0f172a">Customer Experience</td>
+          <td style="text-align:center;font-family:monospace;color:#374151">115</td>
+          <td style="text-align:center;color:#dc2626;font-weight:700;font-family:monospace">42</td>
+          <td style="text-align:center;font-size:7.5pt;font-weight:700;color:#dc2626">Immediate</td>
+          <td style="text-align:right;color:#dc2626;font-family:monospace;font-weight:700">SAR 5.0M</td>
+          <td style="text-align:right;color:#16a34a;font-family:monospace">SAR 1.8M</td>
+          <td style="text-align:right;color:#d97706;font-family:monospace;font-size:8pt">SAR 420K/mo</td>
+        </tr><tr>
+          <td style="color:#94a3b8;font-size:7.5pt">4</td>
+          <td style="font-weight:600;color:#0f172a">Finance</td>
+          <td style="text-align:center;font-family:monospace;color:#374151">87</td>
+          <td style="text-align:center;color:#dc2626;font-weight:700;font-family:monospace">30</td>
+          <td style="text-align:center;font-size:7.5pt;font-weight:700;color:#dc2626">Immediate</td>
+          <td style="text-align:right;color:#dc2626;font-family:monospace;font-weight:700">SAR 3.6M</td>
+          <td style="text-align:right;color:#16a34a;font-family:monospace">SAR 1.3M</td>
+          <td style="text-align:right;color:#d97706;font-family:monospace;font-size:8pt">SAR 300K/mo</td>
+        </tr><tr>
+          <td style="color:#94a3b8;font-size:7.5pt">5</td>
+          <td style="font-weight:600;color:#0f172a">HR &amp; People</td>
+          <td style="text-align:center;font-family:monospace;color:#374151">63</td>
+          <td style="text-align:center;color:#dc2626;font-weight:700;font-family:monospace">17</td>
+          <td style="text-align:center;font-size:7.5pt;font-weight:700;color:#dc2626">Immediate</td>
+          <td style="text-align:right;color:#dc2626;font-family:monospace;font-weight:700">SAR 2.0M</td>
+          <td style="text-align:right;color:#16a34a;font-family:monospace">SAR 714K</td>
+          <td style="text-align:right;color:#d97706;font-family:monospace;font-size:8pt">SAR 170K/mo</td>
+        </tr><tr>
+          <td style="color:#94a3b8;font-size:7.5pt">6</td>
+          <td style="font-weight:600;color:#0f172a">Technology</td>
+          <td style="text-align:center;font-family:monospace;color:#374151">105</td>
+          <td style="text-align:center;color:#dc2626;font-weight:700;font-family:monospace">9</td>
+          <td style="text-align:center;font-size:7.5pt;font-weight:700;color:#dc2626">Immediate</td>
+          <td style="text-align:right;color:#dc2626;font-family:monospace;font-weight:700">SAR 1.1M</td>
+          <td style="text-align:right;color:#16a34a;font-family:monospace">SAR 378K</td>
+          <td style="text-align:right;color:#d97706;font-family:monospace;font-size:8pt">SAR 90K/mo</td>
+        </tr><tr style="border-top:2px solid #1e40af;background:#f0f9ff">
+          <td colspan="3" style="font-weight:700;font-size:8pt;color:#0f172a;padding:5px 7px">Total (shown departments)</td>
+          <td style="text-align:center;font-weight:800;color:#dc2626;font-family:monospace">219</td>
+          <td></td>
+          <td style="text-align:right;font-weight:800;color:#dc2626;font-family:monospace">SAR 26.3M</td>
+          <td style="text-align:right;font-weight:700;color:#16a34a;font-family:monospace">SAR 9.2M</td>
+          <td style="text-align:right;font-weight:700;color:#d97706;font-family:monospace;font-size:8pt">SAR 2.2M/mo</td>
+        </tr></tbody>
+  </table>
+  <div class="board-rec">
+    <div class="board-rec-label">Board Recommendation &mdash; Department Action Required</div>
+    <p style="font-size:9.5pt;font-weight:700;color:#15803d">Commission an immediate workforce stabilisation programme for Engineering and Operations, targeting the 62 Priority Review employees within 30 days.</p>
+  </div>
+  <p style="margin-top:5pt;color:#94a3b8;font-size:7pt">
+    Exposure = At-Risk &times; SAR 120,000 (SHRM) &nbsp;&middot;&nbsp;
+    Potential Savings = Exposure &times; 35% conservative recovery &nbsp;&middot;&nbsp;
+    Monthly = Exposure &divide; 12 &nbsp;&middot;&nbsp; Conservative estimates only
+  </p>
+  
+      <div class="slide-logo">AWI — Workforce Intelligence</div>
+      <div class="slide-number">5 / 11</div>
+      <div class="disclaimer-footer">
+        Statistical indicators only &nbsp;&middot;&nbsp; Not deterministic predictions &nbsp;&middot;&nbsp;
+        Qualified human review required before any employment decision &nbsp;&middot;&nbsp;
+        PDPL-compliant &nbsp;&middot;&nbsp; STC — Workforce Intelligence &nbsp;&middot;&nbsp; Strictly Confidential
+      </div>
+</div>
+
+<div class="slide">
+  <div class="section-label"><span>Retention Opportunities</span></div>
+  <h2>Retention Opportunities &amp; Financial Recovery Potential</h2>
+
+  <p style="font-size:9.5pt;color:#374151;line-height:1.6;margin-bottom:9pt">
+    Not all 221 at-risk employees will leave. AWI&rsquo;s conservative benchmarking indicates
+    that targeted retention interventions can recover between 15% and 35% of at-risk employees,
+    depending on programme scope and leadership commitment. At 221 employees in elevated
+    risk bands, the recoverable population is estimated at <strong style="color:#15803d">61 employees</strong>
+    (7.2% of the at-risk cohort). The financial case for investment is clear:
+    every SAR 1 invested in retention returns multiple SAR in avoided turnover cost.
+  </p>
+
+  <!-- ROI Scenarios -->
+  <div style="font-size:7pt;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#15803d;margin-bottom:5pt">
+    Financial Recovery Scenarios
+  </div>
+  <div class="roi-row">
+    
+      <div class="roi-card">
+        <div class="kpi-label" style="color:#15803d;font-size:7pt;margin-bottom:4px">Minimal</div>
+        <div style="font-size:12pt;font-weight:800;color:#16a34a;font-family:monospace">SAR 2.8M&ndash;SAR 4.2M</div>
+        <div style="font-size:8pt;color:#374151;margin-top:3px">Savings range</div>
+        <div style="font-size:8pt;font-weight:700;color:#15803d;margin-top:2px">ROI: 180%&ndash;270%</div>
+      </div>
+      <div class="roi-card">
+        <div class="kpi-label" style="color:#15803d;font-size:7pt;margin-bottom:4px">Targeted</div>
+        <div style="font-size:12pt;font-weight:800;color:#16a34a;font-family:monospace">SAR 7.2M&ndash;SAR 11.4M</div>
+        <div style="font-size:8pt;color:#374151;margin-top:3px">Savings range</div>
+        <div style="font-size:8pt;font-weight:700;color:#15803d;margin-top:2px">ROI: 340%&ndash;520%</div>
+      </div>
+      <div class="roi-card">
+        <div class="kpi-label" style="color:#15803d;font-size:7pt;margin-bottom:4px">Full Programme</div>
+        <div style="font-size:12pt;font-weight:800;color:#16a34a;font-family:monospace">SAR 14.6M&ndash;SAR 19.8M</div>
+        <div style="font-size:8pt;color:#374151;margin-top:3px">Savings range</div>
+        <div style="font-size:8pt;font-weight:700;color:#15803d;margin-top:2px">ROI: 680%&ndash;940%</div>
+      </div>
+  </div>
+
+  <div style="margin-top:10pt;display:flex;gap:12px">
+    <div class="ruled-section" style="flex:1">
+      <div class="ruled-label">Retention Investment Case</div>
+      <p style="font-size:8.5pt;color:#374151;line-height:1.55">
+        The cost of a structured retention programme is estimated at 5&ndash;10% of the
+        financial exposure figure. At SAR 26.5M total exposure,
+        a programme investment of SAR 1.9M represents a
+        defensible, board-level investment with documented financial return.
+      </p>
+    </div>
+    <div class="ruled-section" style="flex:1">
+      <div class="ruled-label">What Retention Buys</div>
+      <p style="font-size:8.5pt;color:#374151;line-height:1.55">
+        Retention of key employees preserves institutional knowledge,
+        continuity of client relationships, and team stability.
+        The 61 retainable employees represent AWI&rsquo;s conservative
+        28% benchmark &mdash; the realistic floor of what structured
+        intervention can achieve before Q3.
+      </p>
+    </div>
+  </div>
+
+  
+      <div class="slide-logo">AWI — Workforce Intelligence</div>
+      <div class="slide-number">6 / 11</div>
+      <div class="disclaimer-footer">
+        Statistical indicators only &nbsp;&middot;&nbsp; Not deterministic predictions &nbsp;&middot;&nbsp;
+        Qualified human review required before any employment decision &nbsp;&middot;&nbsp;
+        PDPL-compliant &nbsp;&middot;&nbsp; STC — Workforce Intelligence &nbsp;&middot;&nbsp; Strictly Confidential
+      </div>
+</div>
+
+<div class="slide">
+  <div class="section-label"><span>Strategic Leadership Priorities</span></div>
+  <h2>Leadership Priorities &mdash; Ranked by Urgency</h2>
+  <p style="color:#64748b;font-size:8pt;margin-bottom:7pt">
+    Derived from AWI&rsquo;s decision intelligence engine. Immediate items represent the highest
+    financial risk and require board-level decision authority. All priorities are ranked by
+    urgency and financial consequence, not organisational hierarchy.
+  </p>
+  <ul class="priority-list">
+    
+      <li>
+        <span class="prio-badge" style="background:#fef2f2;color:#dc2626;border:1px solid #dc262640">CRITICAL</span>
+        <div style="flex:1">
+          <p style="font-weight:600;font-size:9.5pt;color:#0f172a;margin:0">Commission an immediate workforce stabilisation programme for Engineering and Operations, targeting the 62 Priority Review employees within 30 days.</p>
+          <p style="font-size:8pt;color:#64748b;margin:2px 0 0"></p>
+        </div>
+      </li>
+      <li>
+        <span class="prio-badge" style="background:#fffbeb;color:#d97706;border:1px solid #d9770640">HIGH</span>
+        <div style="flex:1">
+          <p style="font-weight:600;font-size:9.5pt;color:#0f172a;margin:0">Establish a quarterly workforce intelligence reporting cadence to the Board with financial exposure trending.</p>
+          <p style="font-size:8pt;color:#64748b;margin:2px 0 0"></p>
+        </div>
+      </li>
+      <li>
+        <span class="prio-badge" style="background:#fffbeb;color:#d97706;border:1px solid #d9770640">HIGH</span>
+        <div style="flex:1">
+          <p style="font-weight:600;font-size:9.5pt;color:#0f172a;margin:0">Deploy targeted retention interventions in Customer Experience before Q3 headcount review.</p>
+          <p style="font-size:8pt;color:#64748b;margin:2px 0 0"></p>
+        </div>
+      </li>
+  </ul>
+  <div style="margin-top:9pt;display:flex;gap:12px">
+    <div style="flex:1;border-top:3px solid #dc2626;padding-top:6pt">
+      <p style="font-size:7pt;color:#64748b;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2pt">Total At-Risk Exposure</p>
+      <p style="font-size:14pt;font-weight:800;color:#dc2626;font-family:monospace">SAR 26.5M</p>
+    </div>
+    <div style="flex:1;border-top:3px solid #16a34a;padding-top:6pt">
+      <p style="font-size:7pt;color:#64748b;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2pt">Recoverable with Action</p>
+      <p style="font-size:14pt;font-weight:800;color:#16a34a;font-family:monospace">SAR 9.3M</p>
+    </div>
+    <div style="flex:1;border-top:3px solid #d97706;padding-top:6pt">
+      <p style="font-size:7pt;color:#64748b;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2pt">Cost Per Month of Delay</p>
+      <p style="font-size:14pt;font-weight:800;color:#d97706;font-family:monospace">SAR 2.2M</p>
+    </div>
+  </div>
+  
+      <div class="slide-logo">AWI — Workforce Intelligence</div>
+      <div class="slide-number">7 / 11</div>
+      <div class="disclaimer-footer">
+        Statistical indicators only &nbsp;&middot;&nbsp; Not deterministic predictions &nbsp;&middot;&nbsp;
+        Qualified human review required before any employment decision &nbsp;&middot;&nbsp;
+        PDPL-compliant &nbsp;&middot;&nbsp; STC — Workforce Intelligence &nbsp;&middot;&nbsp; Strictly Confidential
+      </div>
+</div>
+
+<div class="slide">
+  <div class="section-label"><span>Primary Board Recommendation</span></div>
+  <h2>Board Recommendation</h2>
+
+  <div style="background:#f0fdf4;border-left:6px solid #16a34a;padding:14px 18px;margin-bottom:12pt">
+    <div style="font-size:7pt;font-weight:700;text-transform:uppercase;letter-spacing:0.10em;color:#15803d;margin-bottom:6pt">
+      Primary Recommended Action
+    </div>
+    <p style="font-size:13pt;font-weight:700;color:#14532d;line-height:1.45">Commission an immediate workforce stabilisation programme for Engineering and Operations, targeting the 62 Priority Review employees within 30 days.</p>
+  </div>
+
+  <div class="two-col" style="margin-bottom:9pt">
+    <div class="ruled-section">
+      <div class="ruled-label">Supporting Context</div>
+      <p style="font-size:8.5pt;color:#374151;line-height:1.55">
+        221 employees (26.1%) are in elevated risk stability bands.
+        Engineering and Operations concentrate the majority of Priority Review cases.
+        Financial exposure of SAR 26.5M represents 26.1% of estimated
+        annual payroll impact if no action is taken.
+      </p>
+    </div>
+    <div class="ruled-section">
+      <div class="ruled-label">Expected Outcome</div>
+      <p style="font-size:8.5pt;color:#374151;line-height:1.55">
+        A structured 90-day workforce stabilisation programme targeting Priority Review
+        employees is projected to recover SAR 9.3M in avoided attrition cost.
+        61 employees are estimated as retainable under conservative benchmarks.
+      </p>
+    </div>
+  </div>
+
+  <div class="rec-item"><div class="rec-num">2</div><div style="flex:1"><p style="font-size:9pt;font-weight:600;color:#374151">Establish a quarterly workforce intelligence reporting cadence to the Board with financial exposure trending.</p></div></div>
+  <div class="rec-item"><div class="rec-num">3</div><div style="flex:1"><p style="font-size:9pt;font-weight:600;color:#374151">Deploy targeted retention interventions in Customer Experience before Q3 headcount review.</p></div></div>
+
+  <div class="urgency-box" style="margin-top:9pt">
+    <div class="urgency-label">Decision Window</div>
+    <p style="font-size:9pt;color:#78350f">
+      The board is advised to authorise this recommendation before the next reporting cycle.
+      Every month of delay adds SAR 2.2M to the cumulative financial impact.
+      The window for intervention with high retention probability is within the current quarter.
+    </p>
+  </div>
+
+  
+      <div class="slide-logo">AWI — Workforce Intelligence</div>
+      <div class="slide-number">8 / 11</div>
+      <div class="disclaimer-footer">
+        Statistical indicators only &nbsp;&middot;&nbsp; Not deterministic predictions &nbsp;&middot;&nbsp;
+        Qualified human review required before any employment decision &nbsp;&middot;&nbsp;
+        PDPL-compliant &nbsp;&middot;&nbsp; STC — Workforce Intelligence &nbsp;&middot;&nbsp; Strictly Confidential
+      </div>
+</div>
+
+<div class="slide">
+  <div class="section-label"><span>Governance &amp; AI Assurance</span></div>
+  <h2>Governance &amp; AI Confidence</h2>
+  <div class="gov-grid">
+    <div class="gov-item"><span class="gov-check">&#10003;</span>Saudi PDPL Article 5 &mdash; Technical Data Controls Active</div><div class="gov-item"><span class="gov-check">&#10003;</span>Fully Offline &mdash; Zero External Data Transfer</div><div class="gov-item"><span class="gov-check">&#10003;</span>PII Columns Excluded Before Analysis</div><div class="gov-item"><span class="gov-check">&#10003;</span>Proxy Leakage Prevention Active and Tested</div><div class="gov-item"><span class="gov-check">&#10003;</span>Conservative ML Metrics &mdash; No Inflation</div><div class="gov-item"><span class="gov-check">&#10003;</span>Arabic-English Bilingual Throughout</div><div class="gov-item"><span class="gov-check">&#10003;</span>Governance Disclaimers on All Outputs</div><div class="gov-item"><span class="gov-check">&#10003;</span>No Individual Employee Identified in Any Output</div>
+  </div>
+  <div class="metric-row">
+    <div class="metric-box">
+      <div class="metric-label">ROC-AUC</div>
+      <div class="metric-val" style="color:#1e40af">0.8471</div>
+      <div style="font-size:7pt;color:#64748b;margin-top:2px">Area Under Curve</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-label">MCC</div>
+      <div class="metric-val" style="color:#0891b2">0.4942</div>
+      <div style="font-size:7pt;color:#64748b;margin-top:2px">Matthews Correlation</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-label">F1 Score</div>
+      <div class="metric-val" style="color:#7c3aed">0.7073</div>
+      <div style="font-size:7pt;color:#64748b;margin-top:2px">Harmonic Mean</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-label">CV Method</div>
+      <div class="metric-val" style="font-size:9pt;color:#64748b;margin-top:4px">5-fold<br/>StratifiedKFold</div>
+    </div>
+  </div>
+  <div style="margin-top:9pt;border-left:3px solid #1e40af;padding-left:12px;background:#f8fafc;padding:9px 12px;border-left:3px solid #1e40af">
+    <p style="font-size:7pt;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#1e40af;margin-bottom:4pt">AI Integrity Statement</p>
+    <p style="font-size:8.5pt;color:#374151;line-height:1.55">
+      AWI&rsquo;s VotingEnsemble model (CatBoost + RandomForest + GradientBoosting) produces
+      conservative, peer-reviewed metrics with zero proxy leakage. All outputs are statistical
+      associations &mdash; not causal certainty. Every prediction is bounded by governance controls
+      and requires qualified human review before any employment decision.
+    </p>
+  </div>
+  
+      <div class="slide-logo">AWI — Workforce Intelligence</div>
+      <div class="slide-number">9 / 11</div>
+      <div class="disclaimer-footer">
+        Statistical indicators only &nbsp;&middot;&nbsp; Not deterministic predictions &nbsp;&middot;&nbsp;
+        Qualified human review required before any employment decision &nbsp;&middot;&nbsp;
+        PDPL-compliant &nbsp;&middot;&nbsp; STC — Workforce Intelligence &nbsp;&middot;&nbsp; Strictly Confidential
+      </div>
+</div>
+
+<div class="slide">
+  <div class="section-label"><span>Methodology</span></div>
+  <h2>AWI Methodology &amp; Assumptions</h2>
+
+  <div class="two-col">
+    <div>
+      <div class="ruled-section">
+        <div class="ruled-label">How AWI Analyses Workforce Data</div>
+        <p style="font-size:8.5pt;color:#374151;line-height:1.6">
+          AWI processes anonymised HR records through a proprietary
+          VotingEnsemble model (CatBoost + RandomForest + GradientBoosting)
+          trained on workforce stability indicators. The model assigns
+          each employee a risk stability score (0&ndash;100) and classifies
+          individuals into four risk bands. No personal identifiers are
+          processed at any stage.
+        </p>
+      </div>
+      <div class="ruled-section">
+        <div class="ruled-label">Risk Band Classification</div>
+        <p style="font-size:8.5pt;color:#374151;line-height:1.6">
+          <strong>Stable (Green):</strong> Low departure risk. Continue standard engagement.<br/>
+          <strong>Monitoring (Amber):</strong> Emerging signals. Periodic check-in advised.<br/>
+          <strong>Strategic Concern (Orange):</strong> Elevated risk. Targeted intervention recommended.<br/>
+          <strong>Priority Review (Red):</strong> High departure risk. Immediate leadership action required.
+        </p>
+      </div>
+    </div>
+    <div>
+      <div class="ruled-section">
+        <div class="ruled-label">Financial Assumptions (SHRM Basis)</div>
+        <p style="font-size:8.5pt;color:#374151;line-height:1.6">
+          Turnover cost of <strong>SAR 120,000</strong> per employee is sourced from
+          SHRM Human Capital Benchmarking and represents the conservative lower bound
+          of documented replacement cost (recruitment, onboarding, productivity loss,
+          and knowledge transfer). This figure is applied uniformly to the at-risk
+          cohort (Priority Review + Strategic Concern) as a conservative aggregated estimate.
+        </p>
+      </div>
+      <div class="ruled-section">
+        <div class="ruled-label">Limitations</div>
+        <p style="font-size:8.5pt;color:#374151;line-height:1.6">
+          All outputs are <em>statistical associations</em>, not causal certainty.
+          Risk scores reflect patterns in historical data and do not constitute a
+          prediction of individual employee behaviour. Financial figures are
+          estimates &mdash; not financial guarantees. Qualified HR professional
+          review is required before any employment decision.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #1e40af;padding:9px 12px;margin-top:4pt">
+    <p style="font-size:7.5pt;color:#374151;line-height:1.5">
+      <strong>Data Sourcing:</strong> HR records provided by the organisation &nbsp;&middot;&nbsp;
+      <strong>PII handling:</strong> Excluded before analysis &nbsp;&middot;&nbsp;
+      <strong>Compliance:</strong> Saudi PDPL Article 5 &nbsp;&middot;&nbsp;
+      <strong>Cross-validation:</strong> 5-fold StratifiedKFold &nbsp;&middot;&nbsp;
+      <strong>Model:</strong> VotingEnsemble ROC-AUC 0.8471 &nbsp;&middot;&nbsp;
+      <strong>Financial basis:</strong> SHRM Human Capital Benchmarking
+    </p>
+  </div>
+
+  
+      <div class="slide-logo">AWI — Workforce Intelligence</div>
+      <div class="slide-number">10 / 11</div>
+      <div class="disclaimer-footer">
+        Statistical indicators only &nbsp;&middot;&nbsp; Not deterministic predictions &nbsp;&middot;&nbsp;
+        Qualified human review required before any employment decision &nbsp;&middot;&nbsp;
+        PDPL-compliant &nbsp;&middot;&nbsp; STC — Workforce Intelligence &nbsp;&middot;&nbsp; Strictly Confidential
+      </div>
+</div>
+
+<div class="slide">
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <div class="section-label" style="margin-bottom:14pt">
+      <span>Board Decision Required</span>
+      <span style="font-weight:400;color:#64748b;font-size:7pt;text-transform:none;letter-spacing:0">June 02, 2026</span>
+    </div>
+
+    <!-- Pull quote -->
+    <div class="pull-quote" style="font-size:13pt">
+      &ldquo;Your workforce risk is quantified.
+      Your financial exposure is documented.
+      Your decision window is now.&rdquo;
+    </div>
+
+    <!-- Three urgency KPIs -->
+    <div style="display:flex;gap:12px;margin-bottom:14pt">
+      <div style="flex:1;border-top:3px solid #d97706;padding-top:8pt;text-align:center;background:#fffbeb;padding:10px">
+        <div class="kpi-label" style="margin-bottom:4px">Employees Awaiting Action</div>
+        <div style="font-size:22pt;font-weight:900;color:#d97706;font-family:monospace">221</div>
+        <div class="kpi-sub">in elevated risk bands</div>
+      </div>
+      <div style="flex:1;border-top:3px solid #dc2626;padding-top:8pt;text-align:center;background:#fef2f2;padding:10px">
+        <div class="kpi-label" style="margin-bottom:4px">Monthly Cost of Inaction</div>
+        <div style="font-size:22pt;font-weight:900;color:#dc2626;font-family:monospace">SAR 2.2M</div>
+        <div class="kpi-sub">accumulating per month</div>
+      </div>
+      <div style="flex:1;border-top:3px solid #16a34a;padding-top:8pt;text-align:center;background:#f0fdf4;padding:10px">
+        <div class="kpi-label" style="margin-bottom:4px">Savings Available</div>
+        <div style="font-size:22pt;font-weight:900;color:#16a34a;font-family:monospace">SAR 9.3M</div>
+        <div class="kpi-sub">with targeted intervention</div>
+      </div>
+    </div>
+
+    <!-- Board action -->
+    <div class="board-rec">
+      <div class="board-rec-label">Recommended Board Action</div>
+      <p style="font-size:11pt;color:#15803d;font-weight:700;line-height:1.4">Commission an immediate workforce stabilisation programme for Engineering and Operations, targeting the 62 Priority Review employees within 30 days.</p>
+    </div>
+
+    <p style="font-size:7pt;color:#94a3b8;margin-top:12pt">
+      AWI Enterprise Workforce Intelligence Platform &nbsp;&middot;&nbsp;
+      PDPL-compliant &nbsp;&middot;&nbsp; Fully offline &nbsp;&middot;&nbsp;
+      CONFIDENTIAL &nbsp;&middot;&nbsp; June 02, 2026
+    </p>
+  </div>
+  
+      <div class="slide-logo">AWI — Workforce Intelligence</div>
+      <div class="slide-number">11 / 11</div>
+      <div class="disclaimer-footer">
+        Statistical indicators only &nbsp;&middot;&nbsp; Not deterministic predictions &nbsp;&middot;&nbsp;
+        Qualified human review required before any employment decision &nbsp;&middot;&nbsp;
+        PDPL-compliant &nbsp;&middot;&nbsp; STC — Workforce Intelligence &nbsp;&middot;&nbsp; Strictly Confidential
+      </div>
+</div>
+</body>
+</html>
