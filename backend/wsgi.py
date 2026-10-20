@@ -1,9 +1,9 @@
 import sys
 import os
 
-# إضافة مسار مجلد backend ومجلد api لكي يرى بايثون ملفات config و main بسهولة تامة
-current_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, current_dir)
-sys.path.insert(0, os.path.join(current_dir, "api"))
+# تحديد المسار المطلق لمجلد backend الحالي وإضافته إلى مسارات بايثون
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
 
 from api.main import app
