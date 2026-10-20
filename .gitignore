@@ -1,0 +1,25 @@
+# Environment / secrets — never commit
+.env
+.env.local
+*.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Node / frontend
+node_modules/
+executive-ui/dist/
+
+# Runtime data / logs / temp
+logs/
+sandbox_runs/
+data/uploads/
+data/outputs/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db

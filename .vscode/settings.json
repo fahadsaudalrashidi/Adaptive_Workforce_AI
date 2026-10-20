@@ -1,0 +1,24 @@
+{
+  "python.defaultInterpreterPath": "C:\\Users\\PvP-Pc\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+  "python.pythonPath": "C:\\Users\\PvP-Pc\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+  "[python]": {
+    "editor.defaultFormatter": null
+  },
+  "python.terminal.activateEnvironment": false,
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${workspaceFolder}"
+  },
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "tests",
+    "test_company_readiness.py",
+    "-v"
+  ],
+  "python.testing.unittestEnabled": false,
+  "editor.rulers": [100],
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/*.pyc": true
+  }
+}
