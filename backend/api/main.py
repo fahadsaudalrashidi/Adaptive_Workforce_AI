@@ -39,9 +39,9 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 from config.settings import API_HOST, API_PORT, API_PREFIX, PLATFORM_NAME, PLATFORM_VERSION
-from backend.api.auth_routes import router as auth_router
-from backend.core.local_auth import get_auth_manager
-from backend.api.local_analysis_routes import create_local_analysis_router
+from api.auth_routes import router as auth_router
+from core.local_auth import get_auth_manager
+from api.local_analysis_routes import create_local_analysis_router
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
