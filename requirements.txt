@@ -55,7 +55,6 @@ cryptography>=41.0.0
 httpx>=0.27.0
 
 # Sandboxed code execution (Phase 43)
-pywin32>=306  # Windows Job Objects — kernel-enforced memory/CPU/process-count
               # limits for backend/core/sandbox_executor.py. Windows-only;
               # this platform targets the user's Windows machine throughout.
 
