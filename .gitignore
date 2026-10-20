@@ -23,3 +23,15 @@ data/outputs/
 # OS
 .DS_Store
 Thumbs.db
+
+SCREENSHOTS/
+pw_shots*/
+.claude/
+.vscode/
+catboost_info/
+data/
+config/
+scripts/
+tests/
+*.xlsx
+*.json
