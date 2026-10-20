@@ -35,3 +35,15 @@ scripts/
 tests/
 *.xlsx
 *.json
+
+SCREENSHOTS/
+pw_shots*/
+.claude/
+.vscode/
+catboost_info/
+data/
+config/
+scripts/
+tests/
+*.xlsx
+*.json
